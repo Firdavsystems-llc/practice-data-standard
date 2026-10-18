@@ -69,10 +69,10 @@ table _Measures
 			    CALCULATE ( MAX ( 'Date'[Month Start] ), 'Date'[Is Complete Month] = TRUE (), ALL ( 'Date' ) )
 			VAR Recent =
 			    CALCULATE ( [Encounters], DATESBETWEEN ( 'Date'[Date], EDATE ( LastMonth, -2 ), EOMONTH ( LastMonth, 0 ) ) )
-			VAR Before =
+			VAR Prior =
 			    CALCULATE ( [Encounters], DATESBETWEEN ( 'Date'[Date], EDATE ( LastMonth, -5 ), EOMONTH ( LastMonth, -3 ) ) )
 			RETURN
-			    DIVIDE ( Recent - Before, Before )
+			    DIVIDE ( Recent - Prior, Prior )
 		formatString: 0.0%
 		displayFolder: Volume
 		lineageTag: 0975df5c-c0f8-5c29-aa26-91466c4a258a
