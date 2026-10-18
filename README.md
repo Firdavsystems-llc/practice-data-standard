@@ -6,7 +6,8 @@ data platform for a small independent medical practice is defined, built,
 tested and measured, so that someone other than the author can deliver it.
 
 Work in progress. The definitions and tests are in `docs/`, synthetic data
-in `synthetic-data/`. Fabric items still to come.
+in `synthetic-data/`, and the three notebooks (Bronze to Silver, the D1-D19
+tests, Gold) in `fabric/`. Semantic model and report still to come.
 
 ## Contents
 
@@ -14,7 +15,10 @@ in `synthetic-data/`. Fabric items still to come.
 - `docs/02-data-definitions.md`
 - `docs/03-measure-catalogue.md`
 - `docs/04-data-quality-tests.md`
+- `docs/07-assessment-baselines.md`
 - `synthetic-data/` generator and a 12-month sample (no real patient data)
+- `fabric/` notebooks and lakehouse items, in Fabric Git format
+- `tools/run_local.py` runs the notebooks on your own machine against the sample
 
 ## License
 

@@ -9,6 +9,8 @@ __pycache__/
 
 # generator output beyond the committed sample
 synthetic-data/out/
+# tools/run_local.py output
+_local/
 
 .DS_Store
 Thumbs.db

@@ -43,6 +43,12 @@ D16 and D17 only run where the accounting source is in scope.
 
 ## Notes on a few of them
 
+**D1.** Reference files (payers, plans, procedure reference) often arrive
+unchanged from one extract to the next. That's fine. The repeat check is on
+the transactional files: appointments, encounters, claims, lines, payments,
+adjustments, expenses. Same hash on those means the same extract was
+loaded twice.
+
 **D2.** The Silver count has to be explained exactly. "Bronze 41,206, D5
 excluded 312, Silver 40,894" is a pass. Anything that doesn't add up is a
 stop, even by one row.

@@ -1,0 +1,5 @@
+# only for running the notebooks locally (tools/run_local.py); Fabric already has these
+pandas>=2.2
+numpy>=1.26
+deltalake>=0.25
+pyarrow>=15
