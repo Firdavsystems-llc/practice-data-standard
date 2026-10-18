@@ -63,6 +63,21 @@ X12 835/837 ───┘   files as received    conformed entities    D1..D19   
 
 Everything runs inside the practice's own Microsoft tenant.
 
+## What the report looks like
+
+The reference report on the synthetic sample, rendered in Power BI Desktop
+from the Gold tables that `tools/run_local.py` builds. All names and
+numbers are invented.
+
+![Overview](docs/img/report-01-overview.png)
+
+Other pages: [volume and access](docs/img/report-02-volume-and-access.png) ·
+[scheduling](docs/img/report-03-scheduling.png) ·
+[revenue](docs/img/report-04-revenue.png) ·
+[payers](docs/img/report-05-payers.png) ·
+[collections and A/R](docs/img/report-06-collections-and-ar.png) ·
+[denials](docs/img/report-07-denials.png)
+
 ## What it is not
 
 - Not an EHR, and not a replacement for any part of one.

@@ -15,6 +15,7 @@ Platform Reference Architecture and Implementation Package v1.1
   validation, gold), a Direct Lake semantic model in TMDL and a reference
   report in PBIR.
 - `tools/run_local.py` to run the notebooks locally.
+- Screenshots of the reference report on the sample (`docs/img/`).
 
 Compared with package v1.1:
 
