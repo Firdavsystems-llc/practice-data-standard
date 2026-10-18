@@ -1,5 +1,7 @@
 # Practice Data Platform Standard (Open Edition)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23458671.svg)](https://doi.org/10.5281/zenodo.23458671)
+
 A written standard, with a working reference kit, for building a data
 platform for a small independent medical practice: what the data means,
 how each measure is calculated, which tests the data has to pass, and how
@@ -95,7 +97,7 @@ yet, full reload rather than incremental). The report is for reference.
 
 ## Citing
 
-See `CITATION.cff`. Author: Firdavs Erkinov, Firdavsystems LLC.
+See `CITATION.cff`, or cite the archived release: Erkinov, F. (2026). *Practice Data Platform Standard, Open Edition* (v1.0.0). Firdavsystems LLC. https://doi.org/10.5281/zenodo.23458671
 
 ## License
 

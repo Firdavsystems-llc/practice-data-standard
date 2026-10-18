@@ -3,6 +3,7 @@ message: "If you use this standard or the reference kit, please cite it as below
 title: "Practice Data Platform Standard, Open Edition"
 version: 1.0.0
 date-released: 2026-10-18
+doi: 10.5281/zenodo.23458671
 authors:
   - family-names: Erkinov
     given-names: Firdavs
