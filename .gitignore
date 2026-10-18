@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# Power BI local files
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# generator output beyond the committed sample
+synthetic-data/out/
+
+.DS_Store
+Thumbs.db
