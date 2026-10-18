@@ -1,0 +1,68 @@
+relationship 8d426196-2800-51a9-ac6e-692776ca0cde
+	fromColumn: 'Claim Line'.'Service Date'
+	toColumn: Date.Date
+
+relationship 84192042-3eb6-503d-8f22-7fc9f53980dc
+	fromColumn: Encounter.'Service Date'
+	toColumn: Date.Date
+
+relationship 58944228-6d94-502b-aeb8-d1fc38096e52
+	fromColumn: Appointment.'Appointment Date'
+	toColumn: Date.Date
+
+relationship deb010b1-2f22-5171-a772-2c2e5289ee09
+	fromColumn: 'Claim Line'.'Location ID'
+	toColumn: Location.'Location ID'
+
+relationship 7c1e8ad1-dd77-5848-94f2-38a32702c9aa
+	fromColumn: Encounter.'Location ID'
+	toColumn: Location.'Location ID'
+
+relationship 01dac5e7-2e1d-59a3-8617-84d16267665f
+	fromColumn: Appointment.'Location ID'
+	toColumn: Location.'Location ID'
+
+relationship 88018d82-c779-5c8e-8685-ede5f4b2d009
+	fromColumn: 'Claim Line'.'Rendering Provider ID'
+	toColumn: Provider.'Provider ID'
+
+relationship ff3eb54e-4224-556a-bae1-f72c084ae355
+	fromColumn: Encounter.'Provider ID'
+	toColumn: Provider.'Provider ID'
+
+relationship a29788b2-82cd-5f57-9586-3b766b505d64
+	fromColumn: Appointment.'Provider ID'
+	toColumn: Provider.'Provider ID'
+
+relationship 3ad571d4-581b-5a7a-a982-614adda4e853
+	fromColumn: 'Claim Line'.'Plan ID'
+	toColumn: 'Payer Plan'.'Plan ID'
+
+relationship 341d2561-fc61-544e-9bdd-42f94392f52b
+	fromColumn: Encounter.'Plan ID'
+	toColumn: 'Payer Plan'.'Plan ID'
+
+relationship f04612ea-0c99-5c50-bd65-8e393cf1dd32
+	fromColumn: Appointment.'Plan ID'
+	toColumn: 'Payer Plan'.'Plan ID'
+
+relationship 7d73bb74-55a7-5703-8a2e-dfef5e2a128e
+	fromColumn: 'Claim Line'.'Patient ID'
+	toColumn: Patient.'Patient ID'
+
+relationship 24ed3efc-1655-5787-a508-8f65519d2498
+	fromColumn: Encounter.'Patient ID'
+	toColumn: Patient.'Patient ID'
+
+relationship 8f5601bb-be06-5c23-a687-6e6c84840f2b
+	fromColumn: Appointment.'Patient ID'
+	toColumn: Patient.'Patient ID'
+
+relationship bad0e321-0544-5ce5-be7b-fe5a64fdea6d
+	fromColumn: 'Claim Line'.'Procedure Code'
+	toColumn: Procedure.'Procedure Code'
+
+relationship c9c1c9e8-ab6d-552b-b6f7-49bf606a99ac
+	fromColumn: 'Claim Line'.'Denial Reason Code'
+	toColumn: 'Denial Reason'.'Reason Code'
+

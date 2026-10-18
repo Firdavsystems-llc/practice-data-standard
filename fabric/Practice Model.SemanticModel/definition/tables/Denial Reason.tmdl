@@ -1,0 +1,35 @@
+table 'Denial Reason'
+	lineageTag: f0826242-7f6a-5b32-a8b7-301d1a6bab39
+
+	column 'Reason Code'
+		dataType: string
+		isKey
+		lineageTag: 8f7e5723-233a-5862-8536-3a7fcdff03ea
+		summarizeBy: none
+		sourceColumn: reason_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reason
+		dataType: string
+		lineageTag: 39080be8-ea16-591e-ac53-296c15f159ac
+		summarizeBy: none
+		sourceColumn: reason_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reason Category'
+		dataType: string
+		lineageTag: 5417ecf4-bb58-5373-9528-df211b7a680c
+		summarizeBy: none
+		sourceColumn: reason_category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Denial Reason' = entity
+		mode: directLake
+		source
+			entityName: dim_denial_reason
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

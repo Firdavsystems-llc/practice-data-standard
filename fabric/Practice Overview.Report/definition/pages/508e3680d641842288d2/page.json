@@ -1,0 +1,173 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "508e3680d641842288d2",
+  "displayName": "Revenue",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7F9'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspace": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7F9'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "2cb9a91e0ef1c5e01381",
+      "target": "0f4e3d5b3e0611effe35",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2cb9a91e0ef1c5e01381",
+      "target": "22e2854ea2ad165dafcc",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2cb9a91e0ef1c5e01381",
+      "target": "36717a12841549601e62",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2cb9a91e0ef1c5e01381",
+      "target": "547bd2282448d69c7239",
+      "type": "HighlightFilter"
+    },
+    {
+      "source": "2cb9a91e0ef1c5e01381",
+      "target": "92089830e120c8231165",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2cb9a91e0ef1c5e01381",
+      "target": "a0247819913068291591",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2cb9a91e0ef1c5e01381",
+      "target": "b7772b2efa73fbdff1de",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2cb9a91e0ef1c5e01381",
+      "target": "d8f44acd3076f8a02064",
+      "type": "NoFilter"
+    },
+    {
+      "source": "547bd2282448d69c7239",
+      "target": "0f4e3d5b3e0611effe35",
+      "type": "NoFilter"
+    },
+    {
+      "source": "547bd2282448d69c7239",
+      "target": "22e2854ea2ad165dafcc",
+      "type": "NoFilter"
+    },
+    {
+      "source": "547bd2282448d69c7239",
+      "target": "2cb9a91e0ef1c5e01381",
+      "type": "NoFilter"
+    },
+    {
+      "source": "547bd2282448d69c7239",
+      "target": "36717a12841549601e62",
+      "type": "NoFilter"
+    },
+    {
+      "source": "547bd2282448d69c7239",
+      "target": "92089830e120c8231165",
+      "type": "NoFilter"
+    },
+    {
+      "source": "547bd2282448d69c7239",
+      "target": "a0247819913068291591",
+      "type": "NoFilter"
+    },
+    {
+      "source": "547bd2282448d69c7239",
+      "target": "b7772b2efa73fbdff1de",
+      "type": "NoFilter"
+    },
+    {
+      "source": "547bd2282448d69c7239",
+      "target": "d8f44acd3076f8a02064",
+      "type": "NoFilter"
+    },
+    {
+      "source": "92089830e120c8231165",
+      "target": "0f4e3d5b3e0611effe35",
+      "type": "NoFilter"
+    },
+    {
+      "source": "92089830e120c8231165",
+      "target": "22e2854ea2ad165dafcc",
+      "type": "NoFilter"
+    },
+    {
+      "source": "92089830e120c8231165",
+      "target": "2cb9a91e0ef1c5e01381",
+      "type": "NoFilter"
+    },
+    {
+      "source": "92089830e120c8231165",
+      "target": "36717a12841549601e62",
+      "type": "NoFilter"
+    },
+    {
+      "source": "92089830e120c8231165",
+      "target": "547bd2282448d69c7239",
+      "type": "HighlightFilter"
+    },
+    {
+      "source": "92089830e120c8231165",
+      "target": "a0247819913068291591",
+      "type": "NoFilter"
+    },
+    {
+      "source": "92089830e120c8231165",
+      "target": "b7772b2efa73fbdff1de",
+      "type": "NoFilter"
+    },
+    {
+      "source": "92089830e120c8231165",
+      "target": "d8f44acd3076f8a02064",
+      "type": "NoFilter"
+    }
+  ]
+}

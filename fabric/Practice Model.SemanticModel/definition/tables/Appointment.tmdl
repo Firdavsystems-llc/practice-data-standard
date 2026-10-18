@@ -1,0 +1,155 @@
+table Appointment
+	lineageTag: 046b662f-9a61-5771-a540-4ab2cdb36738
+
+	column 'Appointment ID'
+		dataType: string
+		isHidden
+		lineageTag: fc8e88f5-f957-536a-a568-35ea1e105edd
+		summarizeBy: none
+		sourceColumn: appointment_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patient ID'
+		dataType: string
+		isHidden
+		lineageTag: bc7ac645-58d2-5911-9a19-78220055043c
+		summarizeBy: none
+		sourceColumn: patient_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Provider ID'
+		dataType: string
+		isHidden
+		lineageTag: cffd9125-13ae-5287-b8ed-012ab0c63dbf
+		summarizeBy: none
+		sourceColumn: provider_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location ID'
+		dataType: string
+		isHidden
+		lineageTag: 39f94b7d-a7d5-5b71-9d9f-327d150cb3b1
+		summarizeBy: none
+		sourceColumn: location_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Plan ID'
+		dataType: string
+		isHidden
+		lineageTag: ef6b90fb-0ad6-5bd0-9a2a-7a70c8ee6e98
+		summarizeBy: none
+		sourceColumn: plan_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Appointment Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: dc9002c1-bea4-564f-8ae9-a73e3cdcc39d
+		summarizeBy: none
+		sourceColumn: appointment_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Appointment Type'
+		dataType: string
+		lineageTag: a94b14dc-fac8-5f00-9418-41642329ce87
+		summarizeBy: none
+		sourceColumn: appointment_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 8443a6fd-3566-51fb-bf08-c07211e59e99
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Outcome
+		dataType: string
+		lineageTag: 48ba2d66-199a-5151-9a5d-4695d02170c8
+		summarizeBy: none
+		sourceColumn: outcome
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Missed'
+		dataType: boolean
+		lineageTag: 6c75c992-515d-5aa2-9256-e9bf342516a1
+		summarizeBy: none
+		sourceColumn: is_missed
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Late Cancel'
+		dataType: boolean
+		lineageTag: 7f3b78a9-4459-572a-86f0-6206c143e2d8
+		summarizeBy: none
+		sourceColumn: is_late_cancel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead Time Days'
+		dataType: int64
+		lineageTag: f8736731-9c10-5117-b02e-97b38aec882c
+		summarizeBy: none
+		sourceColumn: lead_time_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead Time Bucket'
+		dataType: string
+		lineageTag: 775f4bc3-0725-5130-9f2b-89b1998724a4
+		summarizeBy: none
+		sourceColumn: lead_time_bucket
+		sortByColumn: 'Lead Time Bucket No'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead Time Bucket No'
+		dataType: int64
+		isHidden
+		lineageTag: 620a9ef7-ebb1-51bf-844d-6428b909f860
+		summarizeBy: none
+		sourceColumn: lead_time_bucket_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cancel Channel'
+		dataType: string
+		lineageTag: 9018f7d9-344d-52b9-9046-cc3d916fb923
+		summarizeBy: none
+		sourceColumn: cancel_channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Digital Cancel'
+		dataType: boolean
+		lineageTag: 3fe6803a-414e-555d-813d-5492834ff764
+		summarizeBy: none
+		sourceColumn: is_digital_cancel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Encounter ID'
+		dataType: string
+		isHidden
+		lineageTag: fd56869d-ddbb-51be-a66d-563a7bc72a80
+		summarizeBy: none
+		sourceColumn: encounter_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Appointment = entity
+		mode: directLake
+		source
+			entityName: fact_appointment
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

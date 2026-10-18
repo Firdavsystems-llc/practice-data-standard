@@ -1,0 +1,411 @@
+table _Measures
+	lineageTag: 36bda0a2-39d7-5ac6-bf22-f8917930c0a3
+
+	/// One patient seen on one date of service (C.1).
+	measure Encounters = COUNTROWS ( Encounter )
+		formatString: #,0
+		displayFolder: Volume
+		lineageTag: 31fb196b-d944-5212-a1ec-ec6aba000846
+
+	measure 'Encounters, Monthly Avg' = AVERAGEX ( FILTER ( VALUES ( 'Date'[Year Month] ), [Encounters] > 0 ), [Encounters] )
+		formatString: #,0
+		displayFolder: Volume
+		lineageTag: 3253339b-ac40-526e-8d50-cf657f86ed12
+
+	measure 'Office Encounters' = CALCULATE ( [Encounters], Encounter[Is Office] = TRUE () )
+		formatString: #,0
+		displayFolder: Volume
+		lineageTag: 7fd54d9b-e426-50a0-a5c0-9a6003cb9610
+
+	/// Working days are weekdays on which the practice saw patients, which leaves out holidays without a holiday table.
+	measure 'Office Encounters per Working Day' =
+			VAR WorkingDays =
+			    COUNTROWS (
+			        FILTER (
+			            'Date',
+			            'Date'[Is Working Day] && CALCULATE ( COUNTROWS ( Encounter ) ) > 0
+			        )
+			    )
+			RETURN
+			    DIVIDE ( [Office Encounters], WorkingDays )
+		formatString: #,0.0
+		displayFolder: Volume
+		lineageTag: 06dfcd69-1587-5892-9ddc-a88a3d1e6eee
+
+	measure 'Unique Patients' = DISTINCTCOUNT ( Encounter[Patient ID] )
+		formatString: #,0
+		displayFolder: Volume
+		lineageTag: 47bfb63d-ea34-5a34-a73a-c29d3c1ebbca
+
+	/// Patients whose first visit at the practice falls in the period.
+	measure 'New Patients' = CALCULATE ( DISTINCTCOUNT ( Encounter[Patient ID] ), Encounter[Is New Patient] = TRUE () )
+		formatString: #,0
+		displayFolder: Volume
+		lineageTag: 2adb2447-df46-5fe3-b12b-1ec88e7093e5
+
+	measure 'New Patient Encounters' = CALCULATE ( [Encounters], Encounter[Is New Patient] = TRUE () )
+		formatString: #,0
+		displayFolder: Volume
+		lineageTag: fed601a0-1798-5691-bd4d-d51e4df033a5
+
+	measure 'Referred New Patients' = CALCULATE ( [New Patients], Patient[Referral Source] <> "No referral on file" )
+		formatString: #,0
+		displayFolder: Volume
+		lineageTag: 36af7cf9-49de-50b2-973f-04babf51a0de
+
+	measure 'Encounters per Patient' = DIVIDE ( [Encounters], [Unique Patients] )
+		formatString: 0.00
+		displayFolder: Volume
+		lineageTag: 977a816f-2e1a-5bab-a851-fbcb79d03fca
+
+	measure 'Telehealth Share' = DIVIDE ( CALCULATE ( [Encounters], Encounter[Is Telehealth] = TRUE () ), [Encounters] )
+		formatString: 0.0%
+		displayFolder: Volume
+		lineageTag: 422cc5d3-a6d3-5628-87db-3658e97b80aa
+
+	/// Last three complete months against the three before. The sample has no prior year to compare with.
+	measure 'Encounters, 3-Month Change %' =
+			VAR LastMonth =
+			    CALCULATE ( MAX ( 'Date'[Month Start] ), 'Date'[Is Complete Month] = TRUE (), ALL ( 'Date' ) )
+			VAR Recent =
+			    CALCULATE ( [Encounters], DATESBETWEEN ( 'Date'[Date], EDATE ( LastMonth, -2 ), EOMONTH ( LastMonth, 0 ) ) )
+			VAR Before =
+			    CALCULATE ( [Encounters], DATESBETWEEN ( 'Date'[Date], EDATE ( LastMonth, -5 ), EOMONTH ( LastMonth, -3 ) ) )
+			RETURN
+			    DIVIDE ( Recent - Before, Before )
+		formatString: 0.0%
+		displayFolder: Volume
+		lineageTag: 0975df5c-c0f8-5c29-aa26-91466c4a258a
+
+	measure Services = SUM ( 'Claim Line'[Units] )
+		formatString: #,0
+		displayFolder: Volume
+		lineageTag: eb5586cc-d766-52a3-8968-55eae876dc5b
+
+	measure 'Services per Encounter' = DIVIDE ( [Services], [Encounters] )
+		formatString: 0.00
+		displayFolder: Volume
+		lineageTag: 9e41d074-b662-5b19-a57e-464bb7640045
+
+	measure 'E/M Level 4-5 Share' =
+			DIVIDE (
+			    CALCULATE ( [Services], Procedure[E/M Level] IN { "Level 4", "Level 5" } ),
+			    CALCULATE ( [Services], Procedure[E/M Level] <> "" )
+			)
+		formatString: 0.0%
+		displayFolder: Volume
+		lineageTag: f1597f03-fcdd-52f2-a5c4-f9720caf6b34
+
+	/// Clinicians only (C.5).
+	measure 'Work RVUs' = SUM ( 'Claim Line'[Work RVUs] )
+		formatString: #,0.0
+		displayFolder: Volume
+		lineageTag: 2d14ebac-e582-51cf-90ea-e7f2002568d0
+
+	measure 'Work RVUs per Encounter' = DIVIDE ( [Work RVUs], [Encounters] )
+		formatString: 0.00
+		displayFolder: Volume
+		lineageTag: d029e314-5509-59bc-a91e-58e874059ed2
+
+	measure Appointments = COUNTROWS ( Appointment )
+		formatString: #,0
+		displayFolder: Scheduling
+		lineageTag: f0e7637a-1fea-59b5-904c-223da8c1dc11
+
+	measure 'Kept Appointments' = CALCULATE ( [Appointments], Appointment[Outcome] = "Kept" )
+		formatString: #,0
+		displayFolder: Scheduling
+		lineageTag: 099c621e-355a-5189-a5c9-550e5f81bf67
+
+	/// No-shows, patient cancellations under 24 hours, and patients who left before being seen.
+	measure 'Missed Appointments' = CALCULATE ( [Appointments], Appointment[Is Missed] = TRUE () )
+		formatString: #,0
+		displayFolder: Scheduling
+		lineageTag: cb711a57-146c-5664-bd6a-0c1c60678322
+
+	/// Missed / (kept + missed). Timely cancellations are in neither number (C.2).
+	measure 'No-Show Rate' = DIVIDE ( [Missed Appointments], [Kept Appointments] + [Missed Appointments] )
+		formatString: 0.0%
+		displayFolder: Scheduling
+		lineageTag: 4782a235-3d41-5180-ad27-9c5aa534ed0e
+
+	measure 'Kept Rate' = DIVIDE ( [Kept Appointments], [Appointments] )
+		formatString: 0.0%
+		displayFolder: Scheduling
+		lineageTag: cf1ea8b7-9e56-55ea-9701-e6405719d4f5
+
+	measure 'Not Kept Rate' = DIVIDE ( [Appointments] - [Kept Appointments], [Appointments] )
+		formatString: 0.0%
+		displayFolder: Scheduling
+		lineageTag: c038601f-3557-5a7d-9f4a-998b4c96739f
+
+	measure Cancellations = CALCULATE ( [Appointments], Appointment[Status] IN { "cancelled_patient", "cancelled_office" } )
+		formatString: #,0
+		displayFolder: Scheduling
+		lineageTag: 46348a01-3d31-5206-8e26-34ae27528b10
+
+	measure 'Patient Cancellations' = CALCULATE ( [Appointments], Appointment[Status] = "cancelled_patient" )
+		formatString: #,0
+		displayFolder: Scheduling
+		lineageTag: d984bb98-cffc-5d83-9a1f-0bb1ff46ad21
+
+	measure 'Office Cancellations' = CALCULATE ( [Appointments], Appointment[Status] = "cancelled_office" )
+		formatString: #,0
+		displayFolder: Scheduling
+		lineageTag: 92168d9e-a164-575e-a616-1a9d2d64796f
+
+	measure 'Late Cancellations' = CALCULATE ( [Appointments], Appointment[Is Late Cancel] = TRUE () )
+		formatString: #,0
+		displayFolder: Scheduling
+		lineageTag: 119a0d54-ce1e-5a31-8693-7f132c10a811
+
+	measure 'Cancellation Rate' = DIVIDE ( [Cancellations], [Appointments] )
+		formatString: 0.0%
+		displayFolder: Scheduling
+		lineageTag: d510bf8e-ad6b-5de3-be60-eb033fe21e23
+
+	measure 'Late Cancellation Rate' = DIVIDE ( [Late Cancellations], [Patient Cancellations] )
+		formatString: 0.0%
+		displayFolder: Scheduling
+		lineageTag: 896dba27-449f-59a2-97ed-952a8c7b192a
+
+	measure 'Digital Cancellation Share' = DIVIDE ( CALCULATE ( [Appointments], Appointment[Is Digital Cancel] = TRUE () ), [Patient Cancellations] )
+		formatString: 0.0%
+		displayFolder: Scheduling
+		lineageTag: ee2e62cd-58a9-54ea-83d2-d2c4b55ac719
+
+	measure 'Lead Time Median (days)' = MEDIAN ( Appointment[Lead Time Days] )
+		formatString: #,0
+		displayFolder: Scheduling
+		lineageTag: 8f359e60-8be9-5884-b8f5-e2ac400eaec0
+
+	measure 'New Patient Lead Time Median (days)' = CALCULATE ( [Lead Time Median (days)], Appointment[Appointment Type] = "New Patient Visit" )
+		formatString: #,0
+		displayFolder: Scheduling
+		lineageTag: dd8f0f32-7ab5-5ecd-a485-365c24c5dbba
+
+	/// An estimate, and labelled as one wherever it is shown.
+	measure 'Missed-Visit Revenue (est.)' =
+			VAR MissedOffice =
+			    CALCULATE (
+			        [Missed Appointments],
+			        NOT ( Appointment[Appointment Type] IN { "Telehealth Visit", "Nurse Visit" } )
+			    )
+			RETURN
+			    MissedOffice * [Payment per Encounter]
+		formatString: \$#,0
+		displayFolder: Scheduling
+		lineageTag: 9eef00e7-fad9-57ef-9d38-46c811103ade
+
+	measure Charges = SUM ( 'Claim Line'[Charge] )
+		formatString: \$#,0
+		displayFolder: Revenue
+		lineageTag: 03933461-8b0e-5d34-98ad-d3bfb3685733
+
+	/// By date of service. Cash by posting date is in Gold (fact_payment).
+	measure Payments = SUM ( 'Claim Line'[Paid Amount] )
+		formatString: \$#,0
+		displayFolder: Revenue
+		lineageTag: 9574ac84-2d61-5141-83c7-6ab6d5b6798b
+
+	measure 'Payments, Monthly Avg' = AVERAGEX ( FILTER ( VALUES ( 'Date'[Year Month] ), [Payments] > 0 ), [Payments] )
+		formatString: \$#,0
+		displayFolder: Revenue
+		lineageTag: 584b2c5c-8375-56aa-ba14-4625e2c21029
+
+	measure 'Contractual Adjustments' = SUM ( 'Claim Line'[Contractual Amount] )
+		formatString: \$#,0
+		displayFolder: Revenue
+		lineageTag: 9806f9ab-6e69-55e5-93c0-c81c0d8d6f69
+
+	/// Payments / (charges - contractual adjustments), on lines no longer awaiting payment.
+	measure 'Net Collection Rate' =
+			VAR Settled =
+			    FILTER ( ALL ( 'Claim Line'[Payment Status] ), 'Claim Line'[Payment Status] <> "Awaiting payment" )
+			RETURN
+			    DIVIDE (
+			        CALCULATE ( [Payments], KEEPFILTERS ( Settled ) ),
+			        CALCULATE ( [Charges] - [Contractual Adjustments], KEEPFILTERS ( Settled ) )
+			    )
+		formatString: 0.0%
+		displayFolder: Revenue
+		lineageTag: 47991b61-bdfe-5485-9d0d-770f73c838c1
+
+	/// Leaves out the last 60 days, which are not fully paid yet.
+	measure 'Payment per Encounter' =
+			VAR Cutoff =
+			    CALCULATE ( MAX ( 'Date'[Date] ), ALL ( 'Date' ) ) - 60
+			RETURN
+			    CALCULATE ( DIVIDE ( [Payments], [Encounters] ), KEEPFILTERS ( 'Date'[Date] <= Cutoff ) )
+		formatString: \$#,0
+		displayFolder: Revenue
+		lineageTag: ac7e6bab-8732-55d1-b3a8-495b9253e894
+
+	measure 'Payment per Paid Service' = DIVIDE ( [Payments], CALCULATE ( [Services], 'Claim Line'[Paid Amount] > 0 ) )
+		formatString: \$#,0.00
+		displayFolder: Revenue
+		lineageTag: bec741cf-809f-5ed8-bc78-9102ea43d0a3
+
+	measure 'Contracted Rate, Median' = MEDIAN ( 'Claim Line'[Contracted Rate] )
+		formatString: \$#,0.00
+		displayFolder: Revenue
+		lineageTag: 04fa279f-8fd4-5db1-90dd-f9e5c57be19f
+
+	measure 'Open Receivable' = CALCULATE ( SUM ( 'Claim Line'[Balance] ), 'Claim Line'[Is Open] = TRUE () )
+		formatString: \$#,0
+		displayFolder: Receivables
+		lineageTag: 7e31f612-c34f-56fd-9032-1f5d7bee5661
+
+	measure 'Open Receivable, Over 60 Days' = CALCULATE ( [Open Receivable], 'Claim Line'[A/R Age Days] > 60 )
+		formatString: \$#,0
+		displayFolder: Receivables
+		lineageTag: 03a0d336-8824-5cb1-ac05-9afc6ae6c177
+
+	measure 'A/R Age, $-Weighted (days)' =
+			DIVIDE (
+			    SUMX ( FILTER ( 'Claim Line', 'Claim Line'[Is Open] ), 'Claim Line'[Balance] * 'Claim Line'[A/R Age Days] ),
+			    [Open Receivable]
+			)
+		formatString: #,0
+		displayFolder: Receivables
+		lineageTag: 5ef45740-8eff-53ea-8bd3-fb9ed9c7f939
+
+	/// Open balance times the net collection rate of the same payer class.
+	measure 'Net Realizable Receivable' = SUMX ( VALUES ( 'Payer Plan'[Payer Class] ), [Open Receivable] * [Net Collection Rate] )
+		formatString: \$#,0
+		displayFolder: Receivables
+		lineageTag: a3de2001-9620-5117-8051-1a6a49c59cbf
+
+	measure 'Charges Awaiting Payment' = CALCULATE ( [Charges], 'Claim Line'[Payment Status] = "Awaiting payment" )
+		formatString: \$#,0
+		displayFolder: Receivables
+		lineageTag: 448134c2-960c-544b-8d10-136d347bac86
+
+	measure 'Open Claims' = CALCULATE ( DISTINCTCOUNT ( 'Claim Line'[Claim ID] ), 'Claim Line'[Is Open] = TRUE () )
+		formatString: #,0
+		displayFolder: Receivables
+		lineageTag: d292cd37-c6fa-59f5-b73a-bfb214a3f7e5
+
+	measure 'Days in A/R' =
+			VAR LastDay =
+			    CALCULATE ( MAX ( 'Claim Line'[Service Date] ), ALL ( 'Date' ) )
+			VAR Recent =
+			    CALCULATE ( [Charges], DATESBETWEEN ( 'Date'[Date], LastDay - 90, LastDay ) )
+			RETURN
+			    DIVIDE ( [Open Receivable], DIVIDE ( Recent, 91 ) )
+		formatString: #,0
+		displayFolder: Receivables
+		lineageTag: 4e1b64b6-f0a2-515a-a867-5cac1692d026
+
+	/// Days from service to first payment. Copays taken at the visit are not timed (D13).
+	measure 'Days to Payment, Median' = MEDIAN ( 'Claim Line'[Days to First Payment] )
+		formatString: #,0
+		displayFolder: Receivables
+		lineageTag: 3a7c8f53-fc0f-52b5-ae8b-37d14ddbc1ec
+
+	measure 'Paid Lines %' =
+			DIVIDE (
+			    CALCULATE ( COUNTROWS ( 'Claim Line' ), 'Claim Line'[Paid Within] <> "Not paid" ),
+			    CALCULATE ( COUNTROWS ( 'Claim Line' ), ALL ( 'Claim Line'[Paid Within] ), 'Claim Line'[Paid Within] <> "Not paid" )
+			)
+		formatString: 0.0%
+		displayFolder: Receivables
+		lineageTag: 118f3f3d-669e-536c-9914-808864de01d8
+
+	measure 'Denied Lines' = CALCULATE ( COUNTROWS ( 'Claim Line' ), 'Claim Line'[Denied First Pass] = TRUE () )
+		formatString: #,0
+		displayFolder: Denials
+		lineageTag: 0a4f4c35-3a68-594e-a0a1-4c8d51e56fc5
+
+	/// Lines denied on first submission / lines submitted, by count.
+	measure 'Denial Rate' = DIVIDE ( [Denied Lines], CALCULATE ( COUNTROWS ( 'Claim Line' ), NOT ISBLANK ( 'Claim Line'[Submitted Date] ) ) )
+		formatString: 0.0%
+		displayFolder: Denials
+		lineageTag: 6a162173-c901-57e8-b984-9c96feb93e5b
+
+	measure 'Denials, Authorization' = CALCULATE ( [Denied Lines], 'Denial Reason'[Reason Category] = "Authorization" )
+		formatString: #,0
+		displayFolder: Denials
+		lineageTag: 6b7fd5ca-d5d2-58e5-8a46-7721120c6282
+
+	measure 'Denied, Still Open' = CALCULATE ( [Open Receivable], 'Claim Line'[Payment Status] IN { "Denied", "Paid at zero" } )
+		formatString: \$#,0
+		displayFolder: Denials
+		lineageTag: c304981c-d87c-5596-9825-3c1e6fb643d7
+
+	measure 'Denial Write-offs' = SUM ( 'Claim Line'[Denial Writeoff Amount] )
+		formatString: \$#,0
+		displayFolder: Denials
+		lineageTag: 3a21e923-9174-5dd9-a113-a1a06e95bead
+
+	measure 'Denied Lines Written Off' = CALCULATE ( [Denied Lines], 'Claim Line'[Payment Status] = "Written off" )
+		formatString: #,0
+		displayFolder: Denials
+		lineageTag: 2cc5ce78-d7f3-5101-bd22-d2e870bade6a
+
+	measure 'Claims Requiring Action' = CALCULATE ( DISTINCTCOUNT ( 'Claim Line'[Claim ID] ), 'Claim Line'[Requires Action] = TRUE () )
+		formatString: #,0
+		displayFolder: Denials
+		lineageTag: 73c1609d-b9ec-5185-838c-8c93560b1783
+
+	/// Expected payment on claims requiring action: the average paid for the same code and payer over 12 months.
+	measure 'Revenue at Risk' = SUM ( 'Claim Line'[Expected Payment] )
+		formatString: \$#,0
+		displayFolder: Denials
+		lineageTag: af56a429-2a02-5497-bf2a-76688e42d6d1
+
+	measure 'UI Selection' =
+			VAR Sites =
+			    IF ( ISFILTERED ( Location[Location] ), CONCATENATEX ( VALUES ( Location[Location] ), Location[Location], ", " ), "All sites" )
+			VAR Payers =
+			    IF ( ISFILTERED ( 'Payer Plan'[Payer] ), CONCATENATEX ( VALUES ( 'Payer Plan'[Payer] ), 'Payer Plan'[Payer], ", " ), "All payers" )
+			VAR Providers =
+			    IF ( ISFILTERED ( Provider[Provider] ), CONCATENATEX ( VALUES ( Provider[Provider] ), Provider[Provider], ", " ), "All providers" )
+			RETURN
+			    Sites & "  |  " & Payers & "  |  " & Providers
+		displayFolder: _UI
+		lineageTag: 467a22c3-51d7-59f9-97e9-daf6fdcff1c7
+
+	measure 'UI Extract Date' = "Data as of " & FORMAT ( CALCULATE ( MAX ( 'Date'[Date] ), ALL ( 'Date' ) ), "mmm d, yyyy" )
+		displayFolder: _UI
+		lineageTag: bae3cfac-be05-558a-8984-e52096d4c484
+
+	measure 'UI Period' =
+			FORMAT ( CALCULATE ( MIN ( Encounter[Service Date] ), ALL ( Encounter ) ), "mmm yyyy" ) & " to "
+			    & FORMAT ( CALCULATE ( MAX ( Encounter[Service Date] ), ALL ( Encounter ) ), "mmm yyyy" )
+		displayFolder: _UI
+		lineageTag: b64c4ac9-1f88-58d6-b8c2-c7600f86aa2e
+
+	measure 'UI Growth Label' = "Last 3 complete months vs. the 3 before"
+		displayFolder: _UI
+		lineageTag: 68120d91-be94-5bbf-ba70-d47130535ea6
+
+	measure 'UI Trend Title' = "Payments by month (date of service)"
+		displayFolder: _UI
+		lineageTag: 845944e1-4f2d-5d32-9536-97f1c95ee9f4
+
+	/// Visual filter: 1 for months old enough to be mostly paid.
+	measure 'UI Settled Month' = IF ( CALCULATE ( COUNTROWS ( 'Date' ), 'Date'[Is Settled Month] = TRUE () ) > 0, 1, 0 )
+		formatString: 0
+		displayFolder: _UI
+		lineageTag: 901d2bad-8af0-59ac-abbc-c63c10376982
+
+	measure 'UI Recent 12 Months' = IF ( CALCULATE ( COUNTROWS ( 'Date' ), 'Date'[Is Recent 12] = TRUE () ) > 0, 1, 0 )
+		formatString: 0
+		displayFolder: _UI
+		lineageTag: 7550fe18-4b4c-5dbc-b5a5-30be29e860b2
+
+	column Placeholder
+		dataType: string
+		isHidden
+		lineageTag: f787b9c8-c9d0-5399-8970-96cd998c5fff
+		summarizeBy: none
+		sourceColumn: reason_code
+
+	partition _Measures = entity
+		mode: directLake
+		source
+			entityName: dim_denial_reason
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

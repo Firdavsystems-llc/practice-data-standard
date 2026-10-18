@@ -1,0 +1,60 @@
+table Provider
+	lineageTag: 9dafbdfa-6d8c-5307-b9d1-5b9c759e3d0f
+
+	column 'Provider ID'
+		dataType: string
+		isKey
+		lineageTag: 6f9d230e-b672-574f-8893-0470ca7b9ae0
+		summarizeBy: none
+		sourceColumn: provider_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Provider
+		dataType: string
+		lineageTag: d17b797d-0661-580c-a105-21717f6a9ce7
+		summarizeBy: none
+		sourceColumn: provider_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Role
+		dataType: string
+		lineageTag: a2b6b1bb-9064-514b-9100-aca3c6f059b4
+		summarizeBy: none
+		sourceColumn: role
+
+		annotation SummarizationSetBy = Automatic
+
+	column Specialty
+		dataType: string
+		lineageTag: 8f0da661-fc0b-54b8-bb86-cf89db187058
+		summarizeBy: none
+		sourceColumn: specialty
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Clinician'
+		dataType: boolean
+		lineageTag: 898d6ab7-8d09-5fed-9149-4b6fd04feec3
+		summarizeBy: none
+		sourceColumn: is_clinician
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Home Location ID'
+		dataType: string
+		isHidden
+		lineageTag: 7ec64113-3287-5bec-b7a1-19319f73046f
+		summarizeBy: none
+		sourceColumn: home_location_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Provider = entity
+		mode: directLake
+		source
+			entityName: dim_provider
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

@@ -1,0 +1,158 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "2dde5edf5588eb917a73",
+  "displayName": "Payers",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7F9'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspace": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F7F9'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "02ac1db496e8f6d7c54c",
+      "target": "268daa2e23aad9cda2fb",
+      "type": "NoFilter"
+    },
+    {
+      "source": "02ac1db496e8f6d7c54c",
+      "target": "5582c0fbf4b90375a99d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "02ac1db496e8f6d7c54c",
+      "target": "7e34e941ae50a0570884",
+      "type": "NoFilter"
+    },
+    {
+      "source": "02ac1db496e8f6d7c54c",
+      "target": "b8baa9c269a40dfe881b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "02ac1db496e8f6d7c54c",
+      "target": "cef9ec496057dfdee2cb",
+      "type": "NoFilter"
+    },
+    {
+      "source": "02ac1db496e8f6d7c54c",
+      "target": "e58dc0132440bb3b6e0e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "02ac1db496e8f6d7c54c",
+      "target": "e897b9912f1d416ef033",
+      "type": "HighlightFilter"
+    },
+    {
+      "source": "b8baa9c269a40dfe881b",
+      "target": "02ac1db496e8f6d7c54c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8baa9c269a40dfe881b",
+      "target": "268daa2e23aad9cda2fb",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8baa9c269a40dfe881b",
+      "target": "5582c0fbf4b90375a99d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8baa9c269a40dfe881b",
+      "target": "7e34e941ae50a0570884",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8baa9c269a40dfe881b",
+      "target": "cef9ec496057dfdee2cb",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8baa9c269a40dfe881b",
+      "target": "e58dc0132440bb3b6e0e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8baa9c269a40dfe881b",
+      "target": "e897b9912f1d416ef033",
+      "type": "HighlightFilter"
+    },
+    {
+      "source": "e897b9912f1d416ef033",
+      "target": "02ac1db496e8f6d7c54c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e897b9912f1d416ef033",
+      "target": "268daa2e23aad9cda2fb",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e897b9912f1d416ef033",
+      "target": "5582c0fbf4b90375a99d",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e897b9912f1d416ef033",
+      "target": "7e34e941ae50a0570884",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e897b9912f1d416ef033",
+      "target": "b8baa9c269a40dfe881b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e897b9912f1d416ef033",
+      "target": "cef9ec496057dfdee2cb",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e897b9912f1d416ef033",
+      "target": "e58dc0132440bb3b6e0e",
+      "type": "NoFilter"
+    }
+  ]
+}

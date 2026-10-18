@@ -1,0 +1,61 @@
+/// One row per plan identifier as billed, with the payer it maps to. Unmapped plans show as "Unmapped" (test D9).
+table 'Payer Plan'
+	lineageTag: 1d91ebee-788a-5152-a078-6d50a46192dd
+
+	column 'Plan ID'
+		dataType: string
+		isKey
+		lineageTag: c83d7253-c80f-57a7-95c3-6651bbd64c23
+		summarizeBy: none
+		sourceColumn: plan_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plan
+		dataType: string
+		lineageTag: 7f78b2b0-e2a8-5490-bd27-da37f34387ed
+		summarizeBy: none
+		sourceColumn: plan_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payer ID'
+		dataType: string
+		isHidden
+		lineageTag: 7e5be623-8b7e-5244-960a-49ba0b91d165
+		summarizeBy: none
+		sourceColumn: payer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payer
+		dataType: string
+		lineageTag: 6bf1cf02-93da-57f0-9f5e-a794691c8511
+		summarizeBy: none
+		sourceColumn: payer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payer Class'
+		dataType: string
+		lineageTag: 0160f71c-c442-57a5-bb8a-11437f59b033
+		summarizeBy: none
+		sourceColumn: payer_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Type'
+		dataType: string
+		lineageTag: 08233326-5694-599b-a23a-6452ead59872
+		summarizeBy: none
+		sourceColumn: product_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Payer Plan' = entity
+		mode: directLake
+		source
+			entityName: dim_payer_plan
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

@@ -1,0 +1,129 @@
+table Encounter
+	lineageTag: 5cecbad9-e4fe-52c8-93df-5f1d0982ad81
+
+	column 'Encounter ID'
+		dataType: string
+		isHidden
+		lineageTag: e89acb41-2314-50d5-9688-d1aa9203d3f3
+		summarizeBy: none
+		sourceColumn: encounter_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patient ID'
+		dataType: string
+		isHidden
+		lineageTag: 1b9fe103-07e5-5256-a054-5c8228b54c0c
+		summarizeBy: none
+		sourceColumn: patient_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Provider ID'
+		dataType: string
+		isHidden
+		lineageTag: 82da2220-61da-55cd-8faf-022aff9d6a4e
+		summarizeBy: none
+		sourceColumn: provider_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location ID'
+		dataType: string
+		isHidden
+		lineageTag: dc61f9fb-19b7-50f4-8a34-0d49fcf77d83
+		summarizeBy: none
+		sourceColumn: location_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Plan ID'
+		dataType: string
+		isHidden
+		lineageTag: a4ec0184-29ce-5bf7-96ae-c77d15a61520
+		summarizeBy: none
+		sourceColumn: plan_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 5470837e-b17a-57e5-b7df-ed75615548c1
+		summarizeBy: none
+		sourceColumn: service_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Line'
+		dataType: string
+		lineageTag: b2b005c6-b370-5426-87fa-418c1c7aa133
+		summarizeBy: none
+		sourceColumn: service_line
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Place of Service'
+		dataType: string
+		lineageTag: 6747fa86-4618-5309-9854-d727c66788ba
+		summarizeBy: none
+		sourceColumn: place_of_service
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Telehealth'
+		dataType: boolean
+		lineageTag: b3870f64-5aba-511d-a70b-5c2b649b75ee
+		summarizeBy: none
+		sourceColumn: is_telehealth
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Office'
+		dataType: boolean
+		lineageTag: 01e8985e-f43d-5d62-9950-7bef7cad50ec
+		summarizeBy: none
+		sourceColumn: is_office
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is New Patient'
+		dataType: boolean
+		lineageTag: 8df84af4-b4e0-5c6b-a684-2b1e986063ce
+		summarizeBy: none
+		sourceColumn: is_new_patient
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'E/M Level Max'
+		dataType: string
+		lineageTag: 592f293b-2168-5bc3-b0c0-69391cd2a914
+		summarizeBy: none
+		sourceColumn: em_level_max
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Status'
+		dataType: string
+		lineageTag: 71ca030b-0fbd-587f-bdb5-43f94c697fb5
+		summarizeBy: none
+		sourceColumn: payment_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Work RVUs'
+		dataType: double
+		formatString: #,0.0
+		lineageTag: aa75a0ca-595d-5d0a-8ec4-b74400d1970f
+		summarizeBy: sum
+		sourceColumn: work_rvus
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Encounter = entity
+		mode: directLake
+		source
+			entityName: fact_encounter
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

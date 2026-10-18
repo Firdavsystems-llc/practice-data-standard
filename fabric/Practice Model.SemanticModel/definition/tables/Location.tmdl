@@ -1,0 +1,43 @@
+table Location
+	lineageTag: 29e645cf-139b-553f-9a75-9cea346b9cc4
+
+	column 'Location ID'
+		dataType: string
+		isKey
+		lineageTag: 903e72d8-50dd-554b-8c79-680833068f8c
+		summarizeBy: none
+		sourceColumn: location_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: defd3c06-5c6c-5886-b2db-aef54e1382dd
+		summarizeBy: none
+		sourceColumn: location_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 3a2396d5-575a-5832-82bf-10922e405487
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 7ebbf099-14cc-5f7e-9a7e-f7e51b4f026e
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Location = entity
+		mode: directLake
+		source
+			entityName: dim_location
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

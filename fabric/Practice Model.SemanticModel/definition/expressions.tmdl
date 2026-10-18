@@ -1,0 +1,10 @@
+/// SQL analytics endpoint of lh_gold. Replace both values with your own when you connect the model.
+expression DatabaseQuery =
+		let
+		    database = Sql.Database("<your-endpoint>.datawarehouse.fabric.microsoft.com", "<lh_gold-sql-endpoint-id>")
+		in
+		    database
+	lineageTag: 409ee51f-66cc-5709-9dc3-44a3f8c03245
+
+	annotation PBI_IncludeFutureArtifacts = False
+

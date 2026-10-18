@@ -1,0 +1,106 @@
+/// Calendar from the first month of activity to the extract date. Marked as the date table.
+table Date
+	lineageTag: 1fb3d921-1fd6-57a8-ab9f-096a03833bfa
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		isKey
+		lineageTag: 2f14a7db-7096-5312-8b69-862282095d84
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		lineageTag: fbeca70c-b76f-5b62-94d2-8a91cb7c0947
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Start'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: df2dd5b7-83b2-564d-b9b7-3989a3f52b8d
+		summarizeBy: none
+		sourceColumn: month_start
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Month'
+		dataType: string
+		lineageTag: fab82077-eceb-5d6c-9255-c09ae3697203
+		summarizeBy: none
+		sourceColumn: year_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: fac58c3e-fccd-5f8f-9440-8557fa3a5df9
+		summarizeBy: none
+		sourceColumn: month_label
+		sortByColumn: 'Year Month'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		dataType: string
+		lineageTag: caef0f50-ad36-58d1-a8cd-b2e25911b006
+		summarizeBy: none
+		sourceColumn: day_of_week
+		sortByColumn: 'Day of Week No'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week No'
+		dataType: int64
+		isHidden
+		lineageTag: d4a05d3b-a576-575f-a751-63c5d75e72c0
+		summarizeBy: none
+		sourceColumn: day_of_week_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Working Day'
+		dataType: boolean
+		lineageTag: a3ac9e56-3ded-5f4b-ba69-957079df50f6
+		summarizeBy: none
+		sourceColumn: is_working_day
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Complete Month'
+		dataType: boolean
+		lineageTag: 07e82394-8a32-5173-9eaf-46df91193341
+		summarizeBy: none
+		sourceColumn: is_complete_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Settled Month'
+		dataType: boolean
+		lineageTag: 14bbb6f1-add9-5097-819f-db7c8fa87891
+		summarizeBy: none
+		sourceColumn: is_settled_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Recent 12'
+		dataType: boolean
+		lineageTag: f7674055-5e3e-5524-9a33-5599ce55b9a1
+		summarizeBy: none
+		sourceColumn: is_recent_12
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = entity
+		mode: directLake
+		source
+			entityName: dim_date
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

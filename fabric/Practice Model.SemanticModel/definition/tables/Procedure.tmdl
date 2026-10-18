@@ -1,0 +1,60 @@
+table Procedure
+	lineageTag: 0f166d13-ab89-5d32-9238-9f3898a16054
+
+	column 'Procedure Code'
+		dataType: string
+		isKey
+		lineageTag: 74b3ebed-fc3f-5d92-a4f1-324e4b48a461
+		summarizeBy: none
+		sourceColumn: procedure_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 2546a485-151f-5d5f-b409-be7b7367af6c
+		summarizeBy: none
+		sourceColumn: label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Code & Label'
+		dataType: string
+		lineageTag: e45a4e5e-dc27-5c7e-8203-bbbab1ff3fdd
+		summarizeBy: none
+		sourceColumn: code_and_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 01f02a2b-2e93-5d0e-8ff4-fab67b898755
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'E/M Level'
+		dataType: string
+		lineageTag: 1e57632a-09ff-5cbc-97fd-d092195224e4
+		summarizeBy: none
+		sourceColumn: em_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Work RVU'
+		dataType: double
+		formatString: 0.00
+		lineageTag: 32706ac6-2655-5fb0-b1d4-33f96b8fc6f8
+		summarizeBy: none
+		sourceColumn: work_rvu
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Procedure = entity
+		mode: directLake
+		source
+			entityName: dim_procedure
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

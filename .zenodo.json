@@ -1,0 +1,14 @@
+{
+  "title": "Practice Data Platform Standard, Open Edition",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Erkinov, Firdavs",
+      "affiliation": "Firdavsystems LLC"
+    }
+  ],
+  "description": "A written standard and reference kit for data platforms at independent medical practices of fewer than 20 clinicians. It defines the conformed data entities, a catalogue of standard measures, nineteen data-quality tests with thresholds, a delivery and operating method, and four assessment baselines, so that the platform can be delivered by implementers other than its author and measured the same way at every practice. A reference implementation on Microsoft Fabric runs on synthetic data; the repository contains no real patient data. Open edition of the Firdavsystems LLC Practice Data Platform Reference Architecture and Implementation Package v1.1. Documents are licensed CC BY 4.0; code under Apache-2.0.",
+  "license": "Apache-2.0",
+  "keywords": ["healthcare data", "medical practice", "revenue cycle", "data quality", "Microsoft Fabric", "Power BI", "synthetic data"],
+  "language": "eng"
+}

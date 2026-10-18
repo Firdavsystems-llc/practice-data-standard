@@ -1,0 +1,24 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+ref table Date
+ref table Provider
+ref table Location
+ref table 'Payer Plan'
+ref table Procedure
+ref table Patient
+ref table 'Denial Reason'
+ref table Appointment
+ref table Encounter
+ref table 'Claim Line'
+ref table _Measures
+
+ref cultureInfo en-US
+

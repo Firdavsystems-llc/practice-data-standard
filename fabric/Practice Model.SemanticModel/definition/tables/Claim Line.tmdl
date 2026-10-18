@@ -1,0 +1,345 @@
+/// One row per billed procedure line, with what has happened to it by the extract date. Void lines are excluded (D5).
+table 'Claim Line'
+	lineageTag: 0ddb61d8-483b-50c6-acc7-2c89e60f6d94
+
+	column 'Line ID'
+		dataType: string
+		isHidden
+		lineageTag: 6c2934ca-d19a-5e77-8c05-222711aa43c1
+		summarizeBy: none
+		sourceColumn: line_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Claim ID'
+		dataType: string
+		isHidden
+		lineageTag: f2b9ef62-92b5-52fd-a7e8-7f8a092c3081
+		summarizeBy: none
+		sourceColumn: claim_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Encounter ID'
+		dataType: string
+		isHidden
+		lineageTag: 57520445-0d09-5317-b082-b660505bd1c8
+		summarizeBy: none
+		sourceColumn: encounter_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patient ID'
+		dataType: string
+		isHidden
+		lineageTag: e761c8c1-3aa4-51cb-8ea6-6cefdebbb8f4
+		summarizeBy: none
+		sourceColumn: patient_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Plan ID'
+		dataType: string
+		isHidden
+		lineageTag: 0aff40bf-132f-52ef-b92b-05ea2f311d81
+		summarizeBy: none
+		sourceColumn: plan_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location ID'
+		dataType: string
+		isHidden
+		lineageTag: f680eba5-d6e9-555b-8802-4a2638361b9c
+		summarizeBy: none
+		sourceColumn: location_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rendering Provider ID'
+		dataType: string
+		isHidden
+		lineageTag: 2462f555-bf3f-51f4-b5dd-c8e53210e47c
+		summarizeBy: none
+		sourceColumn: rendering_provider_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Procedure Code'
+		dataType: string
+		isHidden
+		lineageTag: 4b0f37a5-a8b5-53b8-bd7a-75e63caa27a5
+		summarizeBy: none
+		sourceColumn: procedure_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: c418a711-0d19-5c1a-b345-4ff531871877
+		summarizeBy: none
+		sourceColumn: service_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Submitted Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 89a3e139-ee51-5104-88b2-a2a75ac17029
+		summarizeBy: none
+		sourceColumn: submitted_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Units
+		dataType: double
+		formatString: #,0
+		lineageTag: 58d9f73e-8007-540c-9726-aa6239f50dd5
+		summarizeBy: sum
+		sourceColumn: units
+
+		annotation SummarizationSetBy = Automatic
+
+	column Charge
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 75498e1a-2e0d-5f1a-ae52-64c3e1985124
+		summarizeBy: sum
+		sourceColumn: charge
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allowed Amount'
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 9c9a90c6-80f4-5171-99fa-40cb45ff5db2
+		summarizeBy: sum
+		sourceColumn: allowed_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contracted Rate'
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: df7a758b-aa36-58fd-babe-a177758c408c
+		summarizeBy: none
+		sourceColumn: contracted_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Paid Amount'
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 8c0a6b8c-5742-5711-8d2d-2c23ce4777d1
+		summarizeBy: sum
+		sourceColumn: paid_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Paid Primary'
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 5d029060-1fe5-5caf-b72e-8165d8762e0e
+		summarizeBy: sum
+		sourceColumn: paid_primary
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Paid Secondary'
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: ef0688a5-0c1c-5520-82ff-2a2a39e7eab1
+		summarizeBy: sum
+		sourceColumn: paid_secondary
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Paid Patient'
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 502ea230-628a-55d8-84ee-d41c485682f9
+		summarizeBy: sum
+		sourceColumn: paid_patient
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contractual Amount'
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: c7e33e26-7bf2-597c-86bc-28dc39cebf3f
+		summarizeBy: sum
+		sourceColumn: contractual_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Writeoff Amount'
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 38161798-192f-5d71-8279-d62803265ae0
+		summarizeBy: sum
+		sourceColumn: writeoff_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Denial Writeoff Amount'
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 609ae3ed-95ae-5e8a-a0b5-7b34fc04e5dc
+		summarizeBy: sum
+		sourceColumn: denial_writeoff_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Other Adj Amount'
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 4d873a16-99a1-5884-b539-c95305b63640
+		summarizeBy: sum
+		sourceColumn: other_adj_amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Balance
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: bf884845-cb5f-5975-8518-d0ec25935f03
+		summarizeBy: sum
+		sourceColumn: balance
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Open'
+		dataType: boolean
+		lineageTag: 4a31c82a-10d5-5b8f-acad-c4e98bff3c2f
+		summarizeBy: none
+		sourceColumn: is_open
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Status'
+		dataType: string
+		lineageTag: 4e9bb1e9-78b9-5451-97ae-3d27631c00fe
+		summarizeBy: none
+		sourceColumn: payment_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Requires Action'
+		dataType: boolean
+		lineageTag: 31f9867f-8cc9-588a-afa6-feab414ff0cb
+		summarizeBy: none
+		sourceColumn: requires_action
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Expected Payment'
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 03465fde-3869-59f2-a9bc-35e241d628c5
+		summarizeBy: sum
+		sourceColumn: expected_payment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'A/R Age Days'
+		dataType: int64
+		lineageTag: a63acc9a-dcf3-5635-8424-35f31b80893f
+		summarizeBy: none
+		sourceColumn: ar_age_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'A/R Bucket'
+		dataType: string
+		lineageTag: fb9f71de-44d0-5813-a1f1-f694272c3c7a
+		summarizeBy: none
+		sourceColumn: ar_bucket
+		sortByColumn: 'A/R Bucket No'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'A/R Bucket No'
+		dataType: int64
+		isHidden
+		lineageTag: 61e53f8e-2072-5903-8ad3-7be19f68deb1
+		summarizeBy: none
+		sourceColumn: ar_bucket_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Denied First Pass'
+		dataType: boolean
+		lineageTag: 21ad3411-88be-50fe-9867-7d2aa2d8a08b
+		summarizeBy: none
+		sourceColumn: denied_first_pass
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Denial Reason Code'
+		dataType: string
+		isHidden
+		lineageTag: 8b1c51ec-2a75-5da2-9a2c-5e9b964b3026
+		summarizeBy: none
+		sourceColumn: denial_reason_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days to First Payment'
+		dataType: int64
+		lineageTag: 878ae699-7f37-5af4-b5a7-a3c22fe28361
+		summarizeBy: none
+		sourceColumn: days_to_first_payment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days to Last Payment'
+		dataType: int64
+		lineageTag: ed327b8b-60a8-5fe1-91d2-ecd0412b4442
+		summarizeBy: none
+		sourceColumn: days_to_last_payment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Paid Within'
+		dataType: string
+		lineageTag: e9d476e2-6a8c-5c63-a962-a265cab7dd19
+		summarizeBy: none
+		sourceColumn: paid_within
+		sortByColumn: 'Paid Within No'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Paid Within No'
+		dataType: int64
+		isHidden
+		lineageTag: f610f895-b63c-566f-9d39-0cf9b91da9d0
+		summarizeBy: none
+		sourceColumn: paid_within_no
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Work RVUs'
+		dataType: double
+		formatString: #,0.0
+		lineageTag: 0d361f98-89bc-5425-8a58-c5b5edf5ce7c
+		summarizeBy: sum
+		sourceColumn: work_rvus
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Claim Status'
+		dataType: string
+		lineageTag: afcbd1e8-85ac-5d5e-b07e-0ab2d2b0aa13
+		summarizeBy: none
+		sourceColumn: claim_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Claim Line' = entity
+		mode: directLake
+		source
+			entityName: fact_claim_line
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+

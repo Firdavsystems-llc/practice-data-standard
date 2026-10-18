@@ -1,0 +1,93 @@
+/// No names, addresses or dates of birth (minimum necessary).
+table Patient
+	lineageTag: cf96a62e-1aa8-54ae-ad47-c0562c5f1fa9
+
+	column 'Patient ID'
+		dataType: string
+		isKey
+		lineageTag: 4e7798a0-ec79-5907-b4b0-3dca7e0e8a5f
+		summarizeBy: none
+		sourceColumn: patient_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sex
+		dataType: string
+		lineageTag: 239aa5ec-4ec0-5844-811b-00224f6ad326
+		summarizeBy: none
+		sourceColumn: sex
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		lineageTag: 3d5faf46-119c-5507-b9c7-d9691a6d0d6f
+		summarizeBy: none
+		sourceColumn: age
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age Band'
+		dataType: string
+		lineageTag: 1c74a905-f233-5151-bf96-eee5b1169ee1
+		summarizeBy: none
+		sourceColumn: age_band
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Race Group'
+		dataType: string
+		lineageTag: bd7f927a-8ae9-5f84-8c98-db56ada8ee0d
+		summarizeBy: none
+		sourceColumn: race_group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ethnicity
+		dataType: string
+		lineageTag: fe75ee5c-24f3-51d7-a337-ccbca36b59f9
+		summarizeBy: none
+		sourceColumn: ethnicity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Coverage Type'
+		dataType: string
+		lineageTag: b310e834-5ad7-5684-9f78-8c17cec4bd49
+		summarizeBy: none
+		sourceColumn: coverage_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Home ZIP'
+		dataType: string
+		lineageTag: 57afdad9-0827-59f1-8d59-7469ae874f6f
+		summarizeBy: none
+		sourceColumn: home_zip
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Seen Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 12d49da1-3b3a-57e2-b65d-2fc7aa1b0ba4
+		summarizeBy: none
+		sourceColumn: first_seen_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Referral Source'
+		dataType: string
+		lineageTag: 9e6d0270-a0e3-5952-8d3e-b0e5097cdecf
+		summarizeBy: none
+		sourceColumn: referral_source
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Patient = entity
+		mode: directLake
+		source
+			entityName: dim_patient
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
