@@ -28,7 +28,7 @@
               },
               "queryRef": "_Measures.Denied Lines",
               "nativeQueryRef": "Denied Lines",
-              "displayName": "Denied claims"
+              "displayName": "Denied lines"
             },
             {
               "field": {
@@ -88,7 +88,7 @@
               },
               "queryRef": "_Measures.Denied Lines Written Off",
               "nativeQueryRef": "Denied Lines Written Off",
-              "displayName": "Denied claims written off"
+              "displayName": "Denied lines written off"
             },
             {
               "field": {

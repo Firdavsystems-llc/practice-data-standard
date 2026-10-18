@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "674bb7d18dfa1babebdb",
   "position": {
-    "x": 828,
-    "y": 226,
+    "x": 640.29520295202951,
+    "y": 225.83025830258302,
     "z": 15000,
-    "height": 222,
-    "width": 436,
+    "height": 222.28782287822878,
+    "width": 624.35424354243548,
     "tabOrder": 15000
   },
   "visual": {
@@ -28,8 +28,8 @@
               },
               "queryRef": "Appointment.Lead Time Bucket",
               "nativeQueryRef": "Lead Time Bucket",
-              "displayName": "Booked ahead",
-              "active": true
+              "active": true,
+              "displayName": "Booked ahead"
             }
           ]
         },

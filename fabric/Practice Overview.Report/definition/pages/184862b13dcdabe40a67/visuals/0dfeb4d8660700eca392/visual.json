@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "0dfeb4d8660700eca392",
   "position": {
-    "x": 828,
-    "y": 226,
+    "x": 640.29520295202951,
+    "y": 225.83025830258302,
     "z": 14000,
-    "height": 222,
-    "width": 436,
+    "height": 222.28782287822878,
+    "width": 623.46863468634683,
     "tabOrder": 14000
   },
   "visual": {
@@ -28,8 +28,8 @@
               },
               "queryRef": "Location.Location",
               "nativeQueryRef": "Location",
-              "displayName": "Site",
-              "active": true
+              "active": true,
+              "displayName": "Site"
             }
           ]
         },

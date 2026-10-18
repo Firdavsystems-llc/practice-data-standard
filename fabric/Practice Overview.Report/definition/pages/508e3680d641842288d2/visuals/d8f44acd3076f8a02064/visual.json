@@ -38,11 +38,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Contractual Adjustments"
+                  "Property": "Allowed Amount"
                 }
               },
-              "queryRef": "_Measures.Contractual Adjustments",
-              "nativeQueryRef": "Contractual Adjustments",
+              "queryRef": "_Measures.Allowed Amount",
+              "nativeQueryRef": "Allowed Amount",
               "displayName": "Contracted amount"
             },
             {
@@ -224,7 +224,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Contractual Adjustments"
+            "metadata": "_Measures.Allowed Amount"
           }
         },
         {

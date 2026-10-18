@@ -1,57 +1,18 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "b8baa9c269a40dfe881b",
   "position": {
-    "x": 16,
-    "y": 420,
+    "x": 157.63837638376384,
+    "y": 419.77859778597787,
     "z": 14000,
-    "height": 266,
-    "width": 820,
+    "height": 266.56826568265683,
+    "width": 549.96309963099634,
     "tabOrder": 14000
   },
   "visual": {
     "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Rows": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Payer Plan"
-                    }
-                  },
-                  "Property": "Payer"
-                }
-              },
-              "queryRef": "Payer Plan.Payer",
-              "nativeQueryRef": "Payer",
-              "displayName": "Payer",
-              "active": true
-            }
-          ]
-        },
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Paid Lines %"
-                }
-              },
-              "queryRef": "_Measures.Paid Lines %",
-              "nativeQueryRef": "Paid Lines %",
-              "displayName": "% paid"
-            }
-          ]
-        },
         "Columns": {
           "projections": [
             {
@@ -67,8 +28,47 @@
               },
               "queryRef": "Claim Line.Paid Within",
               "nativeQueryRef": "Paid Within",
-              "displayName": "Paid within",
-              "active": true
+              "active": true,
+              "displayName": "Paid within"
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Payer Plan"
+                    }
+                  },
+                  "Property": "Payer"
+                }
+              },
+              "queryRef": "Payer Plan.Payer",
+              "nativeQueryRef": "Payer",
+              "active": true,
+              "displayName": "Payer"
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Paid Within %"
+                }
+              },
+              "queryRef": "_Measures.Paid Within %",
+              "nativeQueryRef": "Paid Within %",
+              "displayName": "% paid"
             }
           ]
         }
@@ -127,7 +127,7 @@
                               "Entity": "_Measures"
                             }
                           },
-                          "Property": "Paid Lines %"
+                          "Property": "Paid Within %"
                         }
                       },
                       "FillRule": {
@@ -169,7 +169,7 @@
                 }
               }
             ],
-            "metadata": "_Measures.Paid Lines %"
+            "metadata": "_Measures.Paid Within %"
           }
         }
       ]

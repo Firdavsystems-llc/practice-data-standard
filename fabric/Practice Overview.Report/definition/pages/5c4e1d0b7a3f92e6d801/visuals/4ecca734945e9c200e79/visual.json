@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Riverbend Family Health is a fictional practice. All patients, clinicians, payers, amounts and identifiers are synthetic.  See How to Use for definitions.",
+                    "value": "Riverbend Family Health is a fictional practice. All patients, clinicians, payers, amounts and identifiers are synthetic.  Definitions: docs/03-measure-catalogue.md in the repository.",
                     "textStyle": {
                       "fontSize": "8pt",
                       "color": "#605E5C",

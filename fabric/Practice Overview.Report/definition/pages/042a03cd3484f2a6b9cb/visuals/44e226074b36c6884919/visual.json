@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "44e226074b36c6884919",
   "position": {
     "x": 16,
@@ -13,6 +13,26 @@
     "visualType": "pivotTable",
     "query": {
       "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Payer Plan"
+                    }
+                  },
+                  "Property": "Payer Class"
+                }
+              },
+              "queryRef": "Payer Plan.Payer Class",
+              "nativeQueryRef": "Payer Class",
+              "active": true,
+              "displayName": "Payer type"
+            }
+          ]
+        },
         "Rows": {
           "projections": [
             {
@@ -28,8 +48,8 @@
               },
               "queryRef": "Claim Line.A/R Bucket",
               "nativeQueryRef": "A/R Bucket",
-              "displayName": "Aging bucket",
-              "active": true
+              "active": true,
+              "displayName": "Aging bucket"
             }
           ]
         },
@@ -49,26 +69,6 @@
               "queryRef": "_Measures.Open Receivable",
               "nativeQueryRef": "Open Receivable",
               "displayName": "A/R"
-            }
-          ]
-        },
-        "Columns": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Payer Plan"
-                    }
-                  },
-                  "Property": "Payer Class"
-                }
-              },
-              "queryRef": "Payer Plan.Payer Class",
-              "nativeQueryRef": "Payer Class",
-              "displayName": "Payer type",
-              "active": true
             }
           ]
         }
@@ -170,6 +170,22 @@
               }
             ],
             "metadata": "_Measures.Open Receivable"
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "56.54612722788763D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Claim Line.A/R Bucket"
           }
         }
       ]

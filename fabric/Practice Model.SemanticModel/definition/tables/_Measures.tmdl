@@ -213,6 +213,12 @@ table _Measures
 		displayFolder: Revenue
 		lineageTag: 584b2c5c-8375-56aa-ba14-4625e2c21029
 
+	/// What payers allowed on adjudicated lines. Self-pay lines have no allowed amount.
+	measure 'Allowed Amount' = SUM ( 'Claim Line'[Allowed Amount] )
+		formatString: \$#,0
+		displayFolder: Revenue
+		lineageTag: 0e7c4b52-9a1d-4f63-8b20-6d5e3f1a7c94
+
 	measure 'Contractual Adjustments' = SUM ( 'Claim Line'[Contractual Amount] )
 		formatString: \$#,0
 		displayFolder: Revenue
@@ -303,11 +309,24 @@ table _Measures
 		displayFolder: Receivables
 		lineageTag: 3a7c8f53-fc0f-52b5-ae8b-37d14ddbc1ec
 
-	measure 'Paid Lines %' =
-			DIVIDE (
-			    CALCULATE ( COUNTROWS ( 'Claim Line' ), 'Claim Line'[Paid Within] <> "Not paid" ),
-			    CALCULATE ( COUNTROWS ( 'Claim Line' ), ALL ( 'Claim Line'[Paid Within] ), 'Claim Line'[Paid Within] <> "Not paid" )
-			)
+	/// Of the lines paid so far, the share whose first payment came within this bucket or an earlier one (cumulative).
+	measure 'Paid Within %' =
+			VAR Bucket =
+			    MAX ( 'Claim Line'[Paid Within No] )
+			VAR PaidLines =
+			    CALCULATE (
+			        COUNTROWS ( 'Claim Line' ),
+			        REMOVEFILTERS ( 'Claim Line'[Paid Within], 'Claim Line'[Paid Within No] ),
+			        'Claim Line'[Paid Within No] < 9
+			    )
+			VAR WithinBucket =
+			    CALCULATE (
+			        COUNTROWS ( 'Claim Line' ),
+			        REMOVEFILTERS ( 'Claim Line'[Paid Within], 'Claim Line'[Paid Within No] ),
+			        'Claim Line'[Paid Within No] <= Bucket
+			    )
+			RETURN
+			    IF ( Bucket < 9, DIVIDE ( WithinBucket, PaidLines ) )
 		formatString: 0.0%
 		displayFolder: Receivables
 		lineageTag: 118f3f3d-669e-536c-9914-808864de01d8
@@ -380,7 +399,7 @@ table _Measures
 		displayFolder: _UI
 		lineageTag: 68120d91-be94-5bbf-ba70-d47130535ea6
 
-	measure 'UI Trend Title' = "Payments by month (date of service)"
+	measure 'UI Trend Title' = "Payments by month"
 		displayFolder: _UI
 		lineageTag: 845944e1-4f2d-5d32-9536-97f1c95ee9f4
 

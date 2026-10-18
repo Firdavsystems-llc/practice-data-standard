@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "09b694bc6445e1f0c1c3",
   "position": {
-    "x": 16,
-    "y": 226,
+    "x": 15.940959409594097,
+    "y": 225.83025830258302,
     "z": 14000,
-    "height": 222,
-    "width": 800,
+    "height": 222.28782287822878,
+    "width": 611.95571955719561,
     "tabOrder": 14000
   },
   "visual": {
@@ -28,46 +28,8 @@
               },
               "queryRef": "Date.Month",
               "nativeQueryRef": "Month",
-              "displayName": "Month",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Cancellations"
-                }
-              },
-              "queryRef": "_Measures.Cancellations",
-              "nativeQueryRef": "Cancellations",
-              "displayName": "Lost appointments"
-            }
-          ]
-        },
-        "Y2": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Not Kept Rate"
-                }
-              },
-              "queryRef": "_Measures.Not Kept Rate",
-              "nativeQueryRef": "Not Kept Rate",
-              "displayName": "Share of scheduled"
+              "active": true,
+              "displayName": "Month"
             }
           ]
         },
@@ -132,6 +94,44 @@
               "queryRef": "_Measures.Missed Appointments",
               "nativeQueryRef": "Missed Appointments",
               "displayName": "No-shows"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Cancellations"
+                }
+              },
+              "queryRef": "_Measures.Cancellations",
+              "nativeQueryRef": "Cancellations",
+              "displayName": "Lost appointments"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Not Kept Rate"
+                }
+              },
+              "queryRef": "_Measures.Not Kept Rate",
+              "nativeQueryRef": "Not Kept Rate",
+              "displayName": "Share of scheduled"
             }
           ]
         }
@@ -315,7 +315,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Rescheduled, cancelled or missed (columns) and their share of all scheduled (line). Hover a month for the reasons.'"
+                  "Value": "'Cancelled or missed (columns) and their share of all scheduled (line). Hover a month for the reasons.'"
                 }
               }
             }

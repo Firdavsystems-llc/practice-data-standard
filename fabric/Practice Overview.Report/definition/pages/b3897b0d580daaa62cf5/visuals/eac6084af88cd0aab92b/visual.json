@@ -246,7 +246,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Denied claims by reason'"
+                  "Value": "'Denied lines by reason'"
                 }
               }
             }

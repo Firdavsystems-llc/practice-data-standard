@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "88c1101acb450e3dbd6c",
   "position": {
-    "x": 640,
-    "y": 460,
+    "x": 640.29520295202951,
+    "y": 459.63099630996311,
     "z": 17000,
-    "height": 226,
-    "width": 624,
+    "height": 226.71586715867159,
+    "width": 623.46863468634683,
     "tabOrder": 17000
   },
   "visual": {
@@ -28,8 +28,8 @@
               },
               "queryRef": "Patient.Referral Source",
               "nativeQueryRef": "Referral Source",
-              "displayName": "Referral source",
-              "active": true
+              "active": true,
+              "displayName": "Referral source"
             }
           ]
         },
