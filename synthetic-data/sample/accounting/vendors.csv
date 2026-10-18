@@ -1,0 +1,13 @@
+vendor_id,vendor_name,category
+V01,Medical Supply Distributor A,Supplies
+V02,Vaccine Distributor A,Vaccines
+V03,Reference Laboratory A,Lab
+V04,Landlord - Main,Facilities
+V05,Landlord - West,Facilities
+V06,PM/EHR Vendor A,Software
+V07,IT Services Provider A,IT
+V08,Liability Carrier A,Insurance
+V09,Electric Utility A,Facilities
+V10,Payroll,Payroll
+V11,Diagnostic Equipment Vendor A,Equipment
+V12,Local Marketing Agency A,Marketing

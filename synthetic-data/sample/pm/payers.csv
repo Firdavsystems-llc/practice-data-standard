@@ -1,0 +1,16 @@
+payer_id,payer_name,payer_class
+PY01,Medicare Part B,Medicare
+PY02,Medicare Advantage Plan A,Medicare
+PY03,Medicare Advantage Plan B,Medicare
+PY04,State Medicaid,Medicaid
+PY05,Medicaid MCO A,Medicaid
+PY06,Medicaid MCO B,Medicaid
+PY07,Commercial Payer A,Commercial
+PY08,Commercial Payer B,Commercial
+PY09,Commercial Payer C,Commercial
+PY10,Blue Plan A,Commercial
+PY11,Blue Plan B,Commercial
+PY12,Federal Employee Plan A,Commercial
+PY13,Military Health Plan,Other
+PY14,Medicare Supplement Carrier A,Commercial
+PY99,Self-pay,Self-pay

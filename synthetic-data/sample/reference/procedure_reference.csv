@@ -1,0 +1,36 @@
+procedure_code,label,work_rvu,category
+99202,"Office visit, new, level 2",0.93,E/M office
+99203,"Office visit, new, level 3",1.60,E/M office
+99204,"Office visit, new, level 4",2.60,E/M office
+99205,"Office visit, new, level 5",3.50,E/M office
+99211,"Office visit, established, minimal",0.18,E/M office
+99212,"Office visit, established, level 2",0.70,E/M office
+99213,"Office visit, established, level 3",1.30,E/M office
+99214,"Office visit, established, level 4",1.92,E/M office
+99215,"Office visit, established, level 5",2.80,E/M office
+99383,"Preventive visit, new, 5-11",1.50,Preventive
+99384,"Preventive visit, new, 12-17",1.70,Preventive
+99385,"Preventive visit, new, 18-39",1.92,Preventive
+99386,"Preventive visit, new, 40-64",2.33,Preventive
+99387,"Preventive visit, new, 65+",2.50,Preventive
+99392,"Preventive visit, est., 1-4",1.50,Preventive
+99393,"Preventive visit, est., 5-11",1.50,Preventive
+99394,"Preventive visit, est., 12-17",1.70,Preventive
+99395,"Preventive visit, est., 18-39",1.75,Preventive
+99396,"Preventive visit, est., 40-64",1.90,Preventive
+99397,"Preventive visit, est., 65+",2.00,Preventive
+G0438,"Annual wellness visit, initial",2.60,Preventive
+G0439,"Annual wellness visit, subsequent",1.92,Preventive
+G2211,Visit complexity add-on,0.33,E/M add-on
+36415,Venipuncture,0.00,Lab
+81002,"Urinalysis, non-automated",0.00,Lab
+87880,"Strep test, rapid",0.00,Lab
+93000,ECG with interpretation,0.17,Testing
+94010,Spirometry,0.17,Testing
+96127,Brief behavioral assessment,0.00,Screening
+99406,"Tobacco cessation counseling, 3-10 min",0.24,Counseling
+90471,Immunization administration,0.17,Immunization
+90686,"Influenza vaccine, quadrivalent",0.00,Immunization
+20610,"Joint injection, major joint",0.79,Procedure
+11102,"Skin biopsy, tangential",0.66,Procedure
+17110,Destruction of benign lesions,0.70,Procedure

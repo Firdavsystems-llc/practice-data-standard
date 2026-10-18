@@ -1,0 +1,9 @@
+class_name,service_line,location_id,shared
+MAIN-PC,Primary care,L01,false
+MAIN-PREV,Preventive,L01,false
+MAIN-PROC,Procedures,L01,false
+MAIN-NURSE,Nurse visit,L01,false
+WEST-PC,Primary care,L02,false
+WEST-PREV,Preventive,L02,false
+WEST-NURSE,Nurse visit,L02,false
+SHARED,Shared,,true

@@ -1,0 +1,15 @@
+account,account_name,account_type
+6000,Salaries - clinical,expense
+6010,Salaries - administrative,expense
+6020,Payroll taxes and benefits,expense
+6100,Rent,expense
+6200,Medical supplies,expense
+6210,Vaccines,expense
+6300,Reference lab fees,expense
+6400,PM/EHR subscription,expense
+6410,IT and network services,expense
+6500,Professional liability insurance,expense
+6600,Utilities,expense
+6700,Marketing,expense
+6800,Equipment maintenance,expense
+1500,Medical equipment,asset

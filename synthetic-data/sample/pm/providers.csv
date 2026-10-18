@@ -1,0 +1,6 @@
+provider_id,provider_name,role,specialty,is_clinician,home_location_id,active_from,active_to
+P01,"Haddad, Leila",MD,Family Medicine,true,L01,2019-01-07,
+P02,"Okonkwo, Daniel",DO,Family Medicine,true,L01,2021-03-01,
+P03,"Portillo, Maria",NP,Family Nurse Practitioner,true,L02,2022-08-15,
+P04,"Brennan, Thomas",MD,Internal Medicine,true,L02,2025-10-06,
+P05,"Mercer, Julia",RN,Nursing,false,L01,2020-01-06,

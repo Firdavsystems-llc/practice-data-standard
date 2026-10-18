@@ -1,0 +1,3 @@
+location_id,location_name,city,state,zip,service_lines
+L01,Riverbend Family Health - Main,Alexandria,VA,22305,Primary care|Preventive|Procedures|Nurse visit
+L02,Riverbend Family Health - West,Annandale,VA,22003,Primary care|Preventive|Nurse visit

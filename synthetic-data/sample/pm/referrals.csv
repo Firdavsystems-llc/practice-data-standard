@@ -1,0 +1,271 @@
+referral_id,patient_id,referring_provider,referring_org,referral_date,service_requested,outcome
+R1001,315204,Dr. E. Novak,Hospital A Discharge Planning,2025-05-28,"New patient, primary care",seen
+R1002,315205,Dr. P. Rao,Cardiology Group A,2025-06-15,"New patient, primary care",seen
+R1003,315206,Dr. J. Castillo,Pediatrics Group A,2025-06-14,"New patient, primary care",seen
+R1004,315228,Dr. H. Lindqvist,Women's Health Group A,2025-06-17,"New patient, primary care",seen
+R1005,315230,Dr. E. Novak,Hospital A Discharge Planning,2025-06-25,"New patient, primary care",seen
+R1006,315250,Dr. E. Novak,Hospital A Discharge Planning,2025-06-29,"New patient, primary care",seen
+R1007,315262,Dr. J. Castillo,Pediatrics Group A,2025-07-04,"New patient, primary care",seen
+R1008,315268,Dr. A. Molina,Urgent Care Group A,2025-06-03,"New patient, primary care",seen
+R1009,315269,Dr. E. Novak,Hospital A Discharge Planning,2025-07-01,"New patient, primary care",seen
+R1010,315271,Dr. J. Castillo,Pediatrics Group A,2025-07-11,"New patient, primary care",seen
+R1011,315273,Dr. J. Castillo,Pediatrics Group A,2025-06-21,"New patient, primary care",seen
+R1012,315281,Dr. E. Novak,Hospital A Discharge Planning,2025-06-30,"New patient, primary care",seen
+R1013,315294,Dr. J. Castillo,Pediatrics Group A,2025-06-24,"New patient, primary care",seen
+R1014,315296,Dr. E. Novak,Hospital A Discharge Planning,2025-07-10,"New patient, primary care",seen
+R1015,315306,Dr. R. Bauer,Endocrinology Group A,2025-07-14,"New patient, primary care",seen
+R1016,315309,Dr. A. Molina,Urgent Care Group A,2025-07-12,"New patient, primary care",seen
+R1017,315317,Dr. A. Molina,Urgent Care Group A,2025-07-21,"New patient, primary care",seen
+R1018,315323,Dr. K. Mensah,Orthopedic Group A,2025-07-17,"New patient, primary care",seen
+R1019,315327,Dr. H. Lindqvist,Women's Health Group A,2025-07-28,"New patient, primary care",seen
+R1020,315330,Dr. S. Grant,Hospital A Emergency Dept,2025-07-20,"New patient, primary care",seen
+R1021,315338,Dr. K. Mensah,Orthopedic Group A,2025-07-02,"New patient, primary care",seen
+R1022,315339,Dr. R. Bauer,Endocrinology Group A,2025-07-14,"New patient, primary care",seen
+R1023,315342,Dr. K. Mensah,Orthopedic Group A,2025-07-09,"New patient, primary care",seen
+R1024,315346,Dr. S. Grant,Hospital A Emergency Dept,2025-06-28,"New patient, primary care",seen
+R1025,315367,Dr. K. Mensah,Orthopedic Group A,2025-08-05,"New patient, primary care",seen
+R1026,315381,Dr. H. Lindqvist,Women's Health Group A,2025-08-01,"New patient, primary care",seen
+R1027,315393,Dr. E. Novak,Hospital A Discharge Planning,2025-08-01,"New patient, primary care",seen
+R1028,315408,Dr. J. Castillo,Pediatrics Group A,2025-07-29,"New patient, primary care",seen
+R1029,315411,Dr. P. Rao,Cardiology Group A,2025-07-25,"New patient, primary care",seen
+R1030,315415,Dr. J. Castillo,Pediatrics Group A,2025-07-14,"New patient, primary care",seen
+R1031,315418,Dr. S. Grant,Hospital A Emergency Dept,2025-06-17,"New patient, primary care",seen
+R1032,315427,Dr. J. Castillo,Pediatrics Group A,2025-07-29,"New patient, primary care",seen
+R1033,315450,Dr. H. Lindqvist,Women's Health Group A,2025-08-14,"New patient, primary care",seen
+R1034,315452,Dr. P. Rao,Cardiology Group A,2025-07-29,"New patient, primary care",seen
+R1035,315456,Dr. A. Molina,Urgent Care Group A,2025-08-22,"New patient, primary care",seen
+R1036,315472,Dr. H. Lindqvist,Women's Health Group A,2025-08-16,"New patient, primary care",seen
+R1037,315473,Dr. R. Bauer,Endocrinology Group A,2025-08-18,"New patient, primary care",seen
+R1038,315478,Dr. E. Novak,Hospital A Discharge Planning,2025-08-10,"New patient, primary care",seen
+R1039,315484,Dr. R. Bauer,Endocrinology Group A,2025-08-27,"New patient, primary care",seen
+R1040,315490,Dr. P. Rao,Cardiology Group A,2025-08-27,"New patient, primary care",seen
+R1041,315497,Dr. P. Rao,Cardiology Group A,2025-08-19,"New patient, primary care",seen
+R1042,315500,Dr. P. Rao,Cardiology Group A,2025-08-31,"New patient, primary care",seen
+R1043,315510,Dr. H. Lindqvist,Women's Health Group A,2025-09-12,"New patient, primary care",seen
+R1044,315518,Dr. P. Rao,Cardiology Group A,2025-08-28,"New patient, primary care",seen
+R1045,315531,Dr. E. Novak,Hospital A Discharge Planning,2025-09-06,"New patient, primary care",seen
+R1046,315534,Dr. H. Lindqvist,Women's Health Group A,2025-09-19,"New patient, primary care",seen
+R1047,315545,Dr. J. Castillo,Pediatrics Group A,2025-09-18,"New patient, primary care",seen
+R1048,315550,Dr. R. Bauer,Endocrinology Group A,2025-08-22,"New patient, primary care",seen
+R1049,315553,Dr. R. Bauer,Endocrinology Group A,2025-09-26,"New patient, primary care",seen
+R1050,315556,Dr. A. Molina,Urgent Care Group A,2025-09-08,"New patient, primary care",seen
+R1051,315558,Dr. P. Rao,Cardiology Group A,2025-09-02,"New patient, primary care",seen
+R1052,315564,Dr. R. Bauer,Endocrinology Group A,2025-08-29,"New patient, primary care",seen
+R1053,315566,Dr. E. Novak,Hospital A Discharge Planning,2025-08-29,"New patient, primary care",seen
+R1054,315583,Dr. A. Molina,Urgent Care Group A,2025-09-20,"New patient, primary care",seen
+R1055,315585,Dr. J. Castillo,Pediatrics Group A,2025-09-26,"New patient, primary care",seen
+R1056,315590,Dr. H. Lindqvist,Women's Health Group A,2025-09-13,"New patient, primary care",seen
+R1057,315595,Dr. K. Mensah,Orthopedic Group A,2025-09-10,"New patient, primary care",seen
+R1058,315605,Dr. J. Castillo,Pediatrics Group A,2025-09-10,"New patient, primary care",seen
+R1059,315608,Dr. H. Lindqvist,Women's Health Group A,2025-09-24,"New patient, primary care",seen
+R1060,315612,Dr. E. Novak,Hospital A Discharge Planning,2025-09-22,"New patient, primary care",seen
+R1061,315634,Dr. K. Mensah,Orthopedic Group A,2025-09-20,"New patient, primary care",seen
+R1062,315639,Dr. H. Lindqvist,Women's Health Group A,2025-09-28,"New patient, primary care",seen
+R1063,315641,Dr. H. Lindqvist,Women's Health Group A,2025-09-07,"New patient, primary care",seen
+R1064,315648,Dr. P. Rao,Cardiology Group A,2025-10-12,"New patient, primary care",seen
+R1065,315654,Dr. J. Castillo,Pediatrics Group A,2025-09-29,"New patient, primary care",seen
+R1066,315659,Dr. J. Castillo,Pediatrics Group A,2025-10-17,"New patient, primary care",seen
+R1067,315660,Dr. P. Rao,Cardiology Group A,2025-10-08,"New patient, primary care",seen
+R1068,315663,Dr. P. Rao,Cardiology Group A,2025-09-15,"New patient, primary care",seen
+R1069,315673,Dr. S. Grant,Hospital A Emergency Dept,2025-10-16,"New patient, primary care",seen
+R1070,315693,Dr. K. Mensah,Orthopedic Group A,2025-09-02,"New patient, primary care",seen
+R1071,315696,Dr. E. Novak,Hospital A Discharge Planning,2025-09-13,"New patient, primary care",seen
+R1072,315711,Dr. P. Rao,Cardiology Group A,2025-10-20,"New patient, primary care",seen
+R1073,315716,Dr. R. Bauer,Endocrinology Group A,2025-10-13,"New patient, primary care",seen
+R1074,315726,Dr. H. Lindqvist,Women's Health Group A,2025-10-23,"New patient, primary care",seen
+R1075,315728,Dr. S. Grant,Hospital A Emergency Dept,2025-10-20,"New patient, primary care",seen
+R1076,315741,Dr. J. Castillo,Pediatrics Group A,2025-10-31,"New patient, primary care",seen
+R1077,315747,Dr. E. Novak,Hospital A Discharge Planning,2025-10-19,"New patient, primary care",seen
+R1078,315752,Dr. A. Molina,Urgent Care Group A,2025-08-29,"New patient, primary care",seen
+R1079,315767,Dr. J. Castillo,Pediatrics Group A,2025-10-26,"New patient, primary care",seen
+R1080,315781,Dr. E. Novak,Hospital A Discharge Planning,2025-10-22,"New patient, primary care",seen
+R1081,315796,Dr. H. Lindqvist,Women's Health Group A,2025-10-21,"New patient, primary care",seen
+R1082,315799,Dr. E. Novak,Hospital A Discharge Planning,2025-11-09,"New patient, primary care",seen
+R1083,315802,Dr. R. Bauer,Endocrinology Group A,2025-10-31,"New patient, primary care",seen
+R1084,315805,Dr. K. Mensah,Orthopedic Group A,2025-11-08,"New patient, primary care",seen
+R1085,315807,Dr. P. Rao,Cardiology Group A,2025-11-08,"New patient, primary care",seen
+R1086,315809,Dr. H. Lindqvist,Women's Health Group A,2025-10-31,"New patient, primary care",seen
+R1087,315818,Dr. J. Castillo,Pediatrics Group A,2025-11-14,"New patient, primary care",seen
+R1088,315838,Dr. E. Novak,Hospital A Discharge Planning,2025-11-16,"New patient, primary care",seen
+R1089,315847,Dr. J. Castillo,Pediatrics Group A,2025-11-19,"New patient, primary care",seen
+R1090,315866,Dr. P. Rao,Cardiology Group A,2025-11-13,"New patient, primary care",seen
+R1091,315869,Dr. E. Novak,Hospital A Discharge Planning,2025-11-25,"New patient, primary care",seen
+R1092,315871,Dr. H. Lindqvist,Women's Health Group A,2025-10-19,"New patient, primary care",seen
+R1093,315873,Dr. K. Mensah,Orthopedic Group A,2025-11-22,"New patient, primary care",seen
+R1094,315877,Dr. A. Molina,Urgent Care Group A,2025-11-24,"New patient, primary care",seen
+R1095,315912,Dr. P. Rao,Cardiology Group A,2025-11-23,"New patient, primary care",seen
+R1096,315925,Dr. J. Castillo,Pediatrics Group A,2025-12-10,"New patient, primary care",seen
+R1097,315928,Dr. E. Novak,Hospital A Discharge Planning,2025-12-02,"New patient, primary care",seen
+R1098,315938,Dr. A. Molina,Urgent Care Group A,2025-11-27,"New patient, primary care",seen
+R1099,315940,Dr. S. Grant,Hospital A Emergency Dept,2025-12-09,"New patient, primary care",seen
+R1100,315947,Dr. A. Molina,Urgent Care Group A,2025-12-06,"New patient, primary care",seen
+R1101,315952,Dr. P. Rao,Cardiology Group A,2025-11-28,"New patient, primary care",seen
+R1102,315971,Dr. J. Castillo,Pediatrics Group A,2025-12-21,"New patient, primary care",seen
+R1103,315975,Dr. E. Novak,Hospital A Discharge Planning,2025-12-23,"New patient, primary care",seen
+R1104,315976,Dr. A. Molina,Urgent Care Group A,2025-12-03,"New patient, primary care",seen
+R1105,315979,Dr. P. Rao,Cardiology Group A,2025-12-08,"New patient, primary care",seen
+R1106,315993,Dr. E. Novak,Hospital A Discharge Planning,2025-12-08,"New patient, primary care",seen
+R1107,315996,Dr. S. Grant,Hospital A Emergency Dept,2025-12-27,"New patient, primary care",seen
+R1108,316006,Dr. J. Castillo,Pediatrics Group A,2025-12-02,"New patient, primary care",seen
+R1109,316051,Dr. J. Castillo,Pediatrics Group A,2026-01-06,"New patient, primary care",seen
+R1110,316054,Dr. K. Mensah,Orthopedic Group A,2026-01-02,"New patient, primary care",seen
+R1111,316058,Dr. P. Rao,Cardiology Group A,2026-01-11,"New patient, primary care",seen
+R1112,316061,Dr. A. Molina,Urgent Care Group A,2025-12-19,"New patient, primary care",seen
+R1113,316075,Dr. A. Molina,Urgent Care Group A,2025-12-29,"New patient, primary care",seen
+R1114,316091,Dr. P. Rao,Cardiology Group A,2026-01-10,"New patient, primary care",seen
+R1115,316093,Dr. H. Lindqvist,Women's Health Group A,2025-12-28,"New patient, primary care",seen
+R1116,316095,Dr. S. Grant,Hospital A Emergency Dept,2025-12-07,"New patient, primary care",seen
+R1117,316110,Dr. E. Novak,Hospital A Discharge Planning,2026-01-14,"New patient, primary care",seen
+R1118,316113,Dr. J. Castillo,Pediatrics Group A,2026-01-19,"New patient, primary care",seen
+R1119,316126,Dr. H. Lindqvist,Women's Health Group A,2026-01-23,"New patient, primary care",seen
+R1120,316133,Dr. R. Bauer,Endocrinology Group A,2026-01-15,"New patient, primary care",seen
+R1121,316147,Dr. P. Rao,Cardiology Group A,2026-01-13,"New patient, primary care",seen
+R1122,316155,Dr. H. Lindqvist,Women's Health Group A,2026-01-09,"New patient, primary care",seen
+R1123,316159,Dr. K. Mensah,Orthopedic Group A,2026-01-26,"New patient, primary care",seen
+R1124,316161,Dr. A. Molina,Urgent Care Group A,2026-01-23,"New patient, primary care",seen
+R1125,316168,Dr. K. Mensah,Orthopedic Group A,2026-01-17,"New patient, primary care",seen
+R1126,316172,Dr. J. Castillo,Pediatrics Group A,2026-01-21,"New patient, primary care",seen
+R1127,316187,Dr. R. Bauer,Endocrinology Group A,2026-01-24,"New patient, primary care",seen
+R1128,316189,Dr. A. Molina,Urgent Care Group A,2026-01-21,"New patient, primary care",seen
+R1129,316205,Dr. S. Grant,Hospital A Emergency Dept,2026-02-03,"New patient, primary care",seen
+R1130,316210,Dr. E. Novak,Hospital A Discharge Planning,2025-12-19,"New patient, primary care",seen
+R1131,316217,Dr. K. Mensah,Orthopedic Group A,2026-01-11,"New patient, primary care",seen
+R1132,316226,Dr. H. Lindqvist,Women's Health Group A,2026-01-29,"New patient, primary care",seen
+R1133,316231,Dr. P. Rao,Cardiology Group A,2026-02-14,"New patient, primary care",seen
+R1134,316239,Dr. S. Grant,Hospital A Emergency Dept,2026-02-10,"New patient, primary care",seen
+R1135,316255,Dr. S. Grant,Hospital A Emergency Dept,2026-02-14,"New patient, primary care",seen
+R1136,316260,Dr. S. Grant,Hospital A Emergency Dept,2026-02-17,"New patient, primary care",seen
+R1137,316268,Dr. A. Molina,Urgent Care Group A,2026-02-11,"New patient, primary care",seen
+R1138,316275,Dr. E. Novak,Hospital A Discharge Planning,2026-02-11,"New patient, primary care",seen
+R1139,316278,Dr. P. Rao,Cardiology Group A,2026-01-31,"New patient, primary care",seen
+R1140,316281,Dr. S. Grant,Hospital A Emergency Dept,2026-02-25,"New patient, primary care",seen
+R1141,316289,Dr. P. Rao,Cardiology Group A,2026-02-18,"New patient, primary care",seen
+R1142,316292,Dr. A. Molina,Urgent Care Group A,2026-01-28,"New patient, primary care",seen
+R1143,316308,Dr. R. Bauer,Endocrinology Group A,2026-02-15,"New patient, primary care",seen
+R1144,316311,Dr. K. Mensah,Orthopedic Group A,2026-02-18,"New patient, primary care",seen
+R1145,316321,Dr. K. Mensah,Orthopedic Group A,2026-02-03,"New patient, primary care",seen
+R1146,316324,Dr. K. Mensah,Orthopedic Group A,2026-02-09,"New patient, primary care",seen
+R1147,316333,Dr. S. Grant,Hospital A Emergency Dept,2026-02-26,"New patient, primary care",seen
+R1148,316342,Dr. J. Castillo,Pediatrics Group A,2026-03-10,"New patient, primary care",seen
+R1149,316345,Dr. R. Bauer,Endocrinology Group A,2026-02-20,"New patient, primary care",seen
+R1150,316357,Dr. S. Grant,Hospital A Emergency Dept,2026-02-17,"New patient, primary care",seen
+R1151,316359,Dr. P. Rao,Cardiology Group A,2026-03-02,"New patient, primary care",seen
+R1152,316362,Dr. R. Bauer,Endocrinology Group A,2026-02-01,"New patient, primary care",seen
+R1153,316374,Dr. P. Rao,Cardiology Group A,2026-03-14,"New patient, primary care",seen
+R1154,316379,Dr. J. Castillo,Pediatrics Group A,2026-03-07,"New patient, primary care",seen
+R1155,316382,Dr. A. Molina,Urgent Care Group A,2026-03-07,"New patient, primary care",seen
+R1156,316404,Dr. H. Lindqvist,Women's Health Group A,2026-03-14,"New patient, primary care",seen
+R1157,316411,Dr. S. Grant,Hospital A Emergency Dept,2026-02-25,"New patient, primary care",seen
+R1158,316417,Dr. E. Novak,Hospital A Discharge Planning,2026-02-04,"New patient, primary care",seen
+R1159,316419,Dr. K. Mensah,Orthopedic Group A,2026-03-16,"New patient, primary care",seen
+R1160,316421,Dr. S. Grant,Hospital A Emergency Dept,2026-03-10,"New patient, primary care",seen
+R1161,316430,Dr. E. Novak,Hospital A Discharge Planning,2026-03-18,"New patient, primary care",seen
+R1162,316443,Dr. H. Lindqvist,Women's Health Group A,2026-03-15,"New patient, primary care",seen
+R1163,316457,Dr. K. Mensah,Orthopedic Group A,2026-03-01,"New patient, primary care",seen
+R1164,316465,Dr. R. Bauer,Endocrinology Group A,2026-03-24,"New patient, primary care",seen
+R1165,316480,Dr. S. Grant,Hospital A Emergency Dept,2026-04-03,"New patient, primary care",seen
+R1166,316488,Dr. K. Mensah,Orthopedic Group A,2026-04-06,"New patient, primary care",seen
+R1167,316494,Dr. S. Grant,Hospital A Emergency Dept,2026-03-23,"New patient, primary care",seen
+R1168,316501,Dr. H. Lindqvist,Women's Health Group A,2026-03-12,"New patient, primary care",seen
+R1169,316504,Dr. S. Grant,Hospital A Emergency Dept,2026-03-21,"New patient, primary care",seen
+R1170,316512,Dr. E. Novak,Hospital A Discharge Planning,2026-03-21,"New patient, primary care",seen
+R1171,316518,Dr. S. Grant,Hospital A Emergency Dept,2026-04-02,"New patient, primary care",seen
+R1172,316522,Dr. K. Mensah,Orthopedic Group A,2026-03-22,"New patient, primary care",seen
+R1173,316524,Dr. A. Molina,Urgent Care Group A,2026-03-20,"New patient, primary care",seen
+R1174,316531,Dr. S. Grant,Hospital A Emergency Dept,2026-03-27,"New patient, primary care",seen
+R1175,316534,Dr. J. Castillo,Pediatrics Group A,2026-04-07,"New patient, primary care",seen
+R1176,316537,Dr. J. Castillo,Pediatrics Group A,2026-04-03,"New patient, primary care",seen
+R1177,316539,Dr. K. Mensah,Orthopedic Group A,2026-03-04,"New patient, primary care",seen
+R1178,316542,Dr. P. Rao,Cardiology Group A,2026-04-11,"New patient, primary care",seen
+R1179,316545,Dr. R. Bauer,Endocrinology Group A,2026-03-20,"New patient, primary care",seen
+R1180,316550,Dr. J. Castillo,Pediatrics Group A,2026-03-07,"New patient, primary care",seen
+R1181,316557,Dr. A. Molina,Urgent Care Group A,2026-04-05,"New patient, primary care",seen
+R1182,316568,Dr. K. Mensah,Orthopedic Group A,2026-04-16,"New patient, primary care",seen
+R1183,316572,Dr. S. Grant,Hospital A Emergency Dept,2026-04-08,"New patient, primary care",seen
+R1184,316574,Dr. H. Lindqvist,Women's Health Group A,2026-04-12,"New patient, primary care",seen
+R1185,316582,Dr. E. Novak,Hospital A Discharge Planning,2026-04-13,"New patient, primary care",seen
+R1186,316589,Dr. H. Lindqvist,Women's Health Group A,2026-04-19,"New patient, primary care",seen
+R1187,316591,Dr. K. Mensah,Orthopedic Group A,2026-04-17,"New patient, primary care",seen
+R1188,316593,Dr. J. Castillo,Pediatrics Group A,2026-04-10,"New patient, primary care",seen
+R1189,316598,Dr. R. Bauer,Endocrinology Group A,2026-04-08,"New patient, primary care",seen
+R1190,316603,Dr. S. Grant,Hospital A Emergency Dept,2026-04-14,"New patient, primary care",seen
+R1191,316612,Dr. A. Molina,Urgent Care Group A,2026-04-16,"New patient, primary care",seen
+R1192,316616,Dr. P. Rao,Cardiology Group A,2026-03-22,"New patient, primary care",seen
+R1193,316621,Dr. S. Grant,Hospital A Emergency Dept,2026-03-19,"New patient, primary care",seen
+R1194,316625,Dr. R. Bauer,Endocrinology Group A,2026-04-12,"New patient, primary care",seen
+R1195,316627,Dr. S. Grant,Hospital A Emergency Dept,2026-04-22,"New patient, primary care",seen
+R1196,316637,Dr. K. Mensah,Orthopedic Group A,2026-03-29,"New patient, primary care",seen
+R1197,316642,Dr. A. Molina,Urgent Care Group A,2026-04-07,"New patient, primary care",seen
+R1198,316647,Dr. J. Castillo,Pediatrics Group A,2026-05-01,"New patient, primary care",seen
+R1199,316649,Dr. H. Lindqvist,Women's Health Group A,2026-04-20,"New patient, primary care",seen
+R1200,316651,Dr. A. Molina,Urgent Care Group A,2026-05-01,"New patient, primary care",seen
+R1201,316673,Dr. E. Novak,Hospital A Discharge Planning,2026-05-10,"New patient, primary care",seen
+R1202,316691,Dr. S. Grant,Hospital A Emergency Dept,2026-03-31,"New patient, primary care",seen
+R1203,316697,Dr. R. Bauer,Endocrinology Group A,2026-05-08,"New patient, primary care",seen
+R1204,316699,Dr. E. Novak,Hospital A Discharge Planning,2026-05-06,"New patient, primary care",seen
+R1205,316703,Dr. S. Grant,Hospital A Emergency Dept,2026-05-12,"New patient, primary care",seen
+R1206,316705,Dr. H. Lindqvist,Women's Health Group A,2026-04-29,"New patient, primary care",seen
+R1207,316706,Dr. J. Castillo,Pediatrics Group A,2026-04-27,"New patient, primary care",seen
+R1208,316713,Dr. A. Molina,Urgent Care Group A,2026-03-31,"New patient, primary care",seen
+R1209,316716,Dr. P. Rao,Cardiology Group A,2026-05-28,"New patient, primary care",seen
+R1210,316717,Dr. P. Rao,Cardiology Group A,2026-05-19,"New patient, primary care",seen
+R1211,316722,Dr. S. Grant,Hospital A Emergency Dept,2026-05-23,"New patient, primary care",seen
+R1212,316725,Dr. H. Lindqvist,Women's Health Group A,2026-05-03,"New patient, primary care",seen
+R1213,316727,Dr. P. Rao,Cardiology Group A,2026-05-10,"New patient, primary care",seen
+R1214,316728,Dr. H. Lindqvist,Women's Health Group A,2026-05-09,"New patient, primary care",seen
+R1215,316729,Dr. J. Castillo,Pediatrics Group A,2026-05-09,"New patient, primary care",seen
+R1216,316733,Dr. H. Lindqvist,Women's Health Group A,2026-05-22,"New patient, primary care",seen
+R1217,316736,Dr. H. Lindqvist,Women's Health Group A,2026-05-04,"New patient, primary care",seen
+R1218,316747,Dr. S. Grant,Hospital A Emergency Dept,2026-05-24,"New patient, primary care",seen
+R1219,316759,Dr. S. Grant,Hospital A Emergency Dept,2026-05-19,"New patient, primary care",seen
+R1220,316766,Dr. S. Grant,Hospital A Emergency Dept,2026-04-13,"New patient, primary care",seen
+R1221,316769,Dr. H. Lindqvist,Women's Health Group A,2026-05-20,"New patient, primary care",seen
+R1222,316777,Dr. R. Bauer,Endocrinology Group A,2026-05-24,"New patient, primary care",seen
+R1223,316786,Dr. R. Bauer,Endocrinology Group A,2026-06-02,"New patient, primary care",seen
+R1224,316794,Dr. J. Castillo,Pediatrics Group A,2026-05-31,"New patient, primary care",seen
+R1225,316811,Dr. K. Mensah,Orthopedic Group A,2026-06-03,"New patient, primary care",seen
+R1226,316815,Dr. K. Mensah,Orthopedic Group A,2026-06-06,"New patient, primary care",seen
+R1227,316824,Dr. H. Lindqvist,Women's Health Group A,2026-06-14,"New patient, primary care",seen
+R1228,316825,Dr. K. Mensah,Orthopedic Group A,2026-06-02,"New patient, primary care",seen
+R1229,316831,Dr. S. Grant,Hospital A Emergency Dept,2026-05-01,"New patient, primary care",seen
+R1230,316839,Dr. A. Molina,Urgent Care Group A,2025-12-30,"New patient, primary care",declined
+R1231,316840,Dr. R. Bauer,Endocrinology Group A,2026-01-14,"New patient, primary care",declined
+R1232,316842,Dr. E. Novak,Hospital A Discharge Planning,2025-10-13,"New patient, primary care",declined
+R1233,316845,Dr. A. Molina,Urgent Care Group A,2026-06-24,"New patient, primary care",declined
+R1234,316848,Dr. J. Castillo,Pediatrics Group A,2025-07-04,"New patient, primary care",declined
+R1235,316849,Dr. A. Molina,Urgent Care Group A,2026-01-01,"New patient, primary care",declined
+R1236,316850,Dr. R. Bauer,Endocrinology Group A,2025-08-17,"New patient, primary care",declined
+R1237,316852,Dr. H. Lindqvist,Women's Health Group A,2025-09-18,"New patient, primary care",declined
+R1238,316854,Dr. P. Rao,Cardiology Group A,2025-09-09,"New patient, primary care",declined
+R1239,316857,Dr. A. Molina,Urgent Care Group A,2025-10-16,"New patient, primary care",declined
+R1240,316860,Dr. P. Rao,Cardiology Group A,2026-06-22,"New patient, primary care",declined
+R1241,316863,Dr. J. Castillo,Pediatrics Group A,2025-10-16,"New patient, primary care",declined
+R1242,316865,Dr. P. Rao,Cardiology Group A,2026-04-20,"New patient, primary care",declined
+R1243,316866,Dr. H. Lindqvist,Women's Health Group A,2025-07-09,"New patient, primary care",declined
+R1244,316869,Dr. R. Bauer,Endocrinology Group A,2026-02-14,"New patient, primary care",declined
+R1245,316870,Dr. E. Novak,Hospital A Discharge Planning,2026-04-06,"New patient, primary care",declined
+R1246,316871,Dr. J. Castillo,Pediatrics Group A,2026-06-16,"New patient, primary care",declined
+R1247,316874,Dr. R. Bauer,Endocrinology Group A,2025-12-12,"New patient, primary care",declined
+R1248,316876,Dr. E. Novak,Hospital A Discharge Planning,2026-04-22,"New patient, primary care",declined
+R1249,316877,Dr. K. Mensah,Orthopedic Group A,2025-10-15,"New patient, primary care",declined
+R1250,316880,Dr. P. Rao,Cardiology Group A,2025-12-24,"New patient, primary care",declined
+R1251,316881,Dr. H. Lindqvist,Women's Health Group A,2025-11-08,"New patient, primary care",declined
+R1252,316884,Dr. S. Grant,Hospital A Emergency Dept,2026-03-29,"New patient, primary care",declined
+R1253,316886,Dr. P. Rao,Cardiology Group A,2026-06-18,"New patient, primary care",open
+R1254,316889,Dr. J. Castillo,Pediatrics Group A,2025-07-20,"New patient, primary care",declined
+R1255,316891,Dr. S. Grant,Hospital A Emergency Dept,2025-07-27,"New patient, primary care",declined
+R1256,316894,Dr. R. Bauer,Endocrinology Group A,2025-08-24,"New patient, primary care",declined
+R1257,316897,Dr. R. Bauer,Endocrinology Group A,2026-04-30,"New patient, primary care",declined
+R1258,316899,Dr. H. Lindqvist,Women's Health Group A,2025-08-29,"New patient, primary care",declined
+R1259,316900,Dr. P. Rao,Cardiology Group A,2025-12-28,"New patient, primary care",declined
+R1260,316902,Dr. R. Bauer,Endocrinology Group A,2026-04-27,"New patient, primary care",declined
+R1261,316903,Dr. P. Rao,Cardiology Group A,2025-09-10,"New patient, primary care",declined
+R1262,316906,Dr. S. Grant,Hospital A Emergency Dept,2026-01-24,"New patient, primary care",declined
+R1263,316907,Dr. E. Novak,Hospital A Discharge Planning,2025-10-29,"New patient, primary care",declined
+R1264,316910,Dr. H. Lindqvist,Women's Health Group A,2025-08-06,"New patient, primary care",declined
+R1265,316911,Dr. E. Novak,Hospital A Discharge Planning,2026-01-20,"New patient, primary care",declined
+R1266,316914,Dr. J. Castillo,Pediatrics Group A,2026-01-29,"New patient, primary care",declined
+R1267,316915,Dr. R. Bauer,Endocrinology Group A,2025-09-13,"New patient, primary care",declined
+R1268,316916,Dr. K. Mensah,Orthopedic Group A,2026-05-21,"New patient, primary care",declined
+R1269,316917,Dr. A. Molina,Urgent Care Group A,2025-10-08,"New patient, primary care",declined
+R1270,316920,Dr. S. Grant,Hospital A Emergency Dept,2025-11-18,"New patient, primary care",declined

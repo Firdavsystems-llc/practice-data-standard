@@ -20,7 +20,7 @@ Unless a measure says otherwise:
 | Services | Billed procedure lines, in units. | sum `claim_line.units` |
 | Services per encounter | | Services / Encounters |
 | Unique patients | Distinct patients with at least one encounter in the period. | distinct `patient_id` |
-| New and follow-up patients | New in the period that holds the patient's first recorded encounter at the practice; follow-up in every later period. | first `service_date` per `patient_id` |
+| New and follow-up patients | New in the period that holds the patient's first recorded encounter at the practice; follow-up in every later period. | `patient.first_seen_date`; if the PM doesn't supply it, first `service_date` in Bronze history |
 | Referred new patients | New patients whose claim names an outside referring provider. | new patients where `claim.referring_provider` is not empty |
 | Office encounters per working day | | Office encounters / working days (weekdays less practice holidays) |
 | Monthly average | For any volume measure across several months. | total / months with activity |
@@ -80,11 +80,31 @@ one on every report that shows it.
 
 ## C.5 Productivity
 
-TODO
+| Measure | Definition |
+|---|---|
+| Rendering providers | Providers with at least one billed service in the period. |
+| Work RVUs | Work RVUs of billed services (`procedure_reference.work_rvu` x units), clinicians only (`provider.is_clinician`), net of reversals. |
+| Work RVUs per unit | Total work RVUs / total units. Computed on the totals, not averaged across lines. |
+| Encounters per provider per working day | Encounters / the provider's working days with at least one encounter. |
+
+Nurse visits billed under a supervising physician count to the physician
+who is on the claim line (`rendering_provider_id`), which is how the payer
+sees them. If the practice wants nurse workload, use encounters by
+`encounter.provider_id` instead.
 
 ## C.6 Financial
 
-TODO - needs the accounting entities in 02 first.
+Only where the accounting source is in scope. Grain here is month,
+service line and location, not provider or payer.
+
+| Measure | Definition |
+|---|---|
+| Expenses by service line | Ledger expenses (`expense_transaction`, `capital_flag` false) mapped through `class_service_line_map`. Costs on shared classes are reported as *Shared*. They are not allocated. |
+| Capital investment by service line | Capital purchases (`capital_flag` true), by the service line their class maps to. |
+| Contribution by service line | Payments for the service line less its direct expenses, by period. Payments are matched by the encounter's `service_line` and `location_id`. |
+
+Contribution is a cash view: payments by posting month against expenses by
+posting month. It is not an accrual P&L and shouldn't be presented as one.
 
 ## C.7 Population and case mix
 

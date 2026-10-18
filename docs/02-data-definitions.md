@@ -42,6 +42,7 @@ One row per patient. Key: `patient_id` (the practice account number).
 | ethnicity | text | `Hispanic or Latino`, `Not Hispanic or Latino`, empty |
 | coverage_type | text | current primary coverage; see code sets |
 | home_zip | text | 5 digits |
+| first_seen_date | date | first visit at the practice as the PM system records it. Needed because Bronze history rarely goes back far enough to tell new from established |
 | deceased | bool | |
 
 No name, no street address, no phone, no date of birth.
@@ -145,6 +146,23 @@ Fields: `adjustment_id`, `line_id`, `group_code` (`CO`, `PR`, `OA`, `PI`),
 `reason_code` (CARC), `remark_codes` (RARC, pipe-separated), `amount`,
 `posted_date`, `adjustment_type` (`contractual`, `denial`, `write_off`, `other`).
 
+Two things that trip people up:
+
+- **PR amounts are not adjustments.** Patient responsibility on the 835
+  (group `PR`) moves the balance to the patient. It doesn't reduce it, so it
+  is not written to `adjustment`. The patient's payment, when it comes, is a
+  `payment` with source `patient`.
+- **Denials are posted at $0.00.** A denial is an `adjustment` row with
+  type `denial`, the CARC, and amount 0. The balance stays open until the
+  claim is paid on appeal or written off (a second row, type `write_off`).
+  That's what lets the denial rate and "claims requiring action" be counted
+  from one table.
+
+Write-offs and discounts the practice books itself (self-pay discount,
+sent to collections) have no CARC. They use the practice's own code in
+`reason_code` and leave `group_code` empty. Keep that list short and in the
+design note.
+
 ### payer_plan
 
 One row per plan identifier as billed. Key: `plan_id`.
@@ -175,6 +193,50 @@ Fields: `referral_id`, `patient_id`, `referring_provider`, `referring_org`,
 Practice-maintained reference table. Key: `plan_id` + `procedure_code` + `effective_from`.
 
 Fields: `plan_id`, `procedure_code`, `rate_per_unit`, `effective_from`, `effective_to`.
+
+### procedure_reference
+
+Key: `procedure_code`. Fields: `procedure_code`, `label`, `work_rvu`,
+`category`. Work RVUs come from the CMS physician fee schedule RVU file for
+the year of service. `label` is the practice's own short wording.
+
+## Accounting entities
+
+Only where the practice's books are in scope. These come from the
+accounting system (QuickBooks or similar), not the PM/EHR.
+
+### gl_account
+
+One row per general-ledger account. Key: `account`.
+Fields: `account`, `account_name`, `account_type` (`expense`, `asset`, `revenue`).
+
+### vendor
+
+One row per vendor. Key: `vendor_id`. Fields: `vendor_id`, `vendor_name`, `category`.
+
+### expense_transaction
+
+One row per posted expense or purchase line. Key: `transaction_id`.
+
+| Field | Type | Notes |
+|---|---|---|
+| transaction_id | text | |
+| gl_account | text | |
+| vendor_id | text | |
+| class_name | text | the accounting class or department it was booked to |
+| posted_date | date | |
+| amount | decimal | positive |
+| capital_flag | bool | true for capital purchases (equipment) |
+| memo | text | free text from the books; check it for anything that shouldn't be there |
+
+### class_service_line_map
+
+One row per accounting class. Key: `class_name`.
+Fields: `class_name`, `service_line`, `location_id`, `shared` (bool).
+
+This is the join between the two record systems. Every class with spend
+must map to a service line or be marked shared (test D17). Shared costs
+stay shared; the standard doesn't allocate them.
 
 ## Code sets
 

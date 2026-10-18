@@ -83,5 +83,4 @@ patient-level rows.
 
 Failing rows themselves, where a test produces them, go to
 `dq_exceptions_<test>` in the practice's workspace so the administrator can
-work through them. Those tables stay inside the tenant like everything else
-and are recieved by nobody outside it.
+work through them. Those tables stay inside the tenant like everything else.

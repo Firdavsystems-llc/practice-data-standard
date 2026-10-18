@@ -5,8 +5,8 @@ Reference Architecture and Implementation Package (v1.1). It sets out how a
 data platform for a small independent medical practice is defined, built,
 tested and measured, so that someone other than the author can deliver it.
 
-Work in progress. The definitions and tests are in `docs/`. Synthetic data
-and the Fabric items are still to come.
+Work in progress. The definitions and tests are in `docs/`, synthetic data
+in `synthetic-data/`. Fabric items still to come.
 
 ## Contents
 
@@ -14,6 +14,7 @@ and the Fabric items are still to come.
 - `docs/02-data-definitions.md`
 - `docs/03-measure-catalogue.md`
 - `docs/04-data-quality-tests.md`
+- `synthetic-data/` generator and a 12-month sample (no real patient data)
 
 ## License
 
